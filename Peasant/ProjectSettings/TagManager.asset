@@ -15,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - blockingLayer
-  - 
-  - 
+  - Collision
+  - Player
+  - Ground
   - 
   - 
   - 
@@ -42,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 2798080837
+    locked: 0
+  - name: BehindPlayer
+    uniqueID: 2352852931
+    locked: 0
+  - name: Player
+    uniqueID: 3405386285
+    locked: 0
+  - name: InFrontOfPlayer
+    uniqueID: 1271776969
     locked: 0
