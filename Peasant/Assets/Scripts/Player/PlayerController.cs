@@ -25,19 +25,19 @@ public class PlayerController : MonoBehaviour {
     {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
+            
+        print("X: " + inputX);
+        print("Y: " + inputY);
 
-        if (inputX == 1 || inputX == -1)
+        if (Mathf.Abs(inputX) > 0.5f)
         {
-            inputY = 0f;
             myRigidbody.velocity = new Vector2(inputX * moveSpeed, 0);
         }
-        else if (inputY == 1 || inputY == -1)
+        else if (Mathf.Abs(inputY) > 0.5f)
         {
-            inputX = 0f;
             myRigidbody.velocity = new Vector2(0, inputY * moveSpeed);
         }
-
-        if (inputX == 0 && inputY == 0)
+        else
         {
             myRigidbody.velocity = new Vector2(0f, 0f);
         }
@@ -45,4 +45,5 @@ public class PlayerController : MonoBehaviour {
         anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
     }
+
 }
