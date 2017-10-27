@@ -25,9 +25,6 @@ public class PlayerController : MonoBehaviour {
     {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
-            
-        print("X: " + inputX);
-        print("Y: " + inputY);
 
         if (Mathf.Abs(inputX) > 0.5f)
         {
@@ -44,6 +41,11 @@ public class PlayerController : MonoBehaviour {
 
         anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+    }
+
+    public void caughtByGuard()
+    {
+        print("You have been caught by a guard");
     }
 
 }
