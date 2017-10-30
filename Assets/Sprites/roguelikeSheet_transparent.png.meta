@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 78b6a3e66e76a534fa6ee6ded03fc247
-timeCreated: 1509108119
+timeCreated: 1509304776
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -49,7 +49,7 @@ TextureImporter:
     21300084: roguelikeSheet_transparent_42
     21300086: roguelikeSheet_transparent_43
     21300088: roguelikeSheet_transparent_44
-    21300090: roguelikeSheet_transparent_45
+    21300090: house_1_roundwindow
     21300092: roguelikeSheet_transparent_46
     21300094: roguelikeSheet_transparent_47
     21300096: roguelikeSheet_transparent_48
@@ -2922,7 +2922,7 @@ TextureImporter:
         - {x: 8, y: 5}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_45
+      name: house_1_roundwindow
       rect:
         serializedVersion: 2
         x: 765

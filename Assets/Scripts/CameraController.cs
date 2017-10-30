@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    public GameObject followTarget;
+    public GameObject player;
+    public GameObject ghost;
     private Vector3 targetPos;
     public float moveSpeed;
 
@@ -15,7 +16,15 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        targetPos = new Vector3(followTarget.transform.position.x, followTarget.transform.position.y, transform.position.z);
+        if(PlayerState.state == PlayerState.playerState.Player)
+        {
+            targetPos = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+        }
+        else
+        {
+            targetPos = new Vector3(ghost.transform.position.x, ghost.transform.position.y, transform.position.z);
+        }
+        
         transform.position = Vector3.Lerp(transform.position, targetPos, moveSpeed * Time.deltaTime);
 	}
 }

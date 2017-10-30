@@ -2,37 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
-
+public class GhostController : MonoBehaviour
+{
+    public PlayerController playerCon;
     public float moveSpeed;
-    public GhostController ghostCon;
 
     private Animator anim;
     private Rigidbody2D myRigidbody;
 
-	// Use this for initialization
-	void Start () {
-        anim = GetComponent<Animator>();
+    // Use this for initialization
+    void Start()
+    {
+        //anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKeyDown("c"))
         {
             gameObject.SetActive(false);
-            ghostCon.enable(transform.position);
-            
+            playerCon.enable();
 
         }
         moveplayer();
-        
     }
 
-    public void enable()
+    public void enable(Vector3 pos)
     {
+        transform.position = pos;
         gameObject.SetActive(true);
-        PlayerState.state = PlayerState.playerState.Player;
+        PlayerState.state = PlayerState.playerState.Ghost;
     }
 
     private void moveplayer()
@@ -53,14 +54,10 @@ public class PlayerController : MonoBehaviour {
             myRigidbody.velocity = new Vector2(0f, 0f);
         }
 
-        anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
-        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        //anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        //anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
     }
 
-    public void caughtByGuard()
-    {
-        print("You have been caught by a guard");
-    }
 
-    
 }
+

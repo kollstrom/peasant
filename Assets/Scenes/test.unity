@@ -3529,6 +3529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f960850dff71ff8418457175f24b5446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!61 &243682943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3597,15 +3598,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!212 &243682946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3637,8 +3638,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -889581011
-  m_SortingLayer: 2
+  m_SortingLayerID: -1942114365
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300828, guid: 78b6a3e66e76a534fa6ee6ded03fc247, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8008,16 +8009,15 @@ GameObject:
   - component: {fileID: 753114103}
   - component: {fileID: 753114102}
   - component: {fileID: 753114101}
-  - component: {fileID: 753114100}
   - component: {fileID: 753114099}
   - component: {fileID: 753114098}
   m_Layer: 12
-  m_Name: Ghost (Duplicate of player)
+  m_Name: Ghost
   m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!60 &753114098
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8034,7 +8034,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.9583333}
+    oldSize: {x: 1.0381818, y: 1.0236363}
     newSize: {x: 5.2941175, y: 6.7647057}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8042,40 +8042,30 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.22500001, y: -0.4791667}
-      - {x: 0.26666668, y: -0.43750003}
-      - {x: 0.26666668, y: -0.3541667}
-      - {x: 0.3, y: -0.3375}
-      - {x: 0.35833335, y: -0.27916667}
-      - {x: 0.35833335, y: -0.17916667}
-      - {x: 0.28333336, y: -0.07083334}
-      - {x: 0.30833334, y: -0.020833334}
-      - {x: 0.30404484, y: 0.021496035}
-      - {x: 0.30404472, y: 0.024941295}
-      - {x: 0.22904384, y: 0.041062355}
-      - {x: 0.21036196, y: 0.026375085}
-      - {x: 0.14591718, y: 0.01331085}
-      - {x: -0.14579606, y: 0.016145974}
-      - {x: -0.25564885, y: 0.019664466}
-      - {x: -0.33231854, y: 0.03070049}
-      - {x: -0.29306912, y: 0.016601115}
-      - {x: -0.31033182, y: 0.012064464}
-      - {x: -0.32419562, y: 0.02492407}
-      - {x: -0.34188747, y: 0.0061776564}
-      - {x: -0.32860303, y: 0.021275178}
-      - {x: -0.30833334, y: -0.020833334}
-      - {x: -0.275, y: -0.09583334}
-      - {x: -0.3, y: -0.12083334}
-      - {x: -0.35000002, y: -0.17916667}
-      - {x: -0.35833335, y: -0.27916667}
-      - {x: -0.3166667, y: -0.32083336}
-      - {x: -0.26666668, y: -0.3541667}
-      - {x: -0.275, y: -0.44583336}
-      - {x: -0.24166667, y: -0.4791667}
-      - {x: -0.06666667, y: -0.4791667}
-      - {x: -0.025000002, y: -0.43750003}
-      - {x: 0.041666668, y: -0.45416668}
-      - {x: 0.06666667, y: -0.4791667}
+    - - {x: 0.4481818, y: -0.21909091}
+      - {x: 0.41545454, y: -0.17909092}
+      - {x: 0.37363636, y: -0.17545454}
+      - {x: 0.37181818, y: -0.18272728}
+      - {x: 0.3009091, y: -0.17909092}
+      - {x: 0.26818183, y: -0.17909092}
+      - {x: 0.27363637, y: 0.21909091}
+      - {x: 0.23727272, y: 0.29181817}
+      - {x: 0.09909091, y: 0.46272728}
+      - {x: 0.011818182, y: 0.47545454}
+      - {x: -0.21181819, y: 0.47545454}
+      - {x: -0.32090908, y: 0.37}
+      - {x: -0.3918182, y: 0.29909092}
+      - {x: -0.42818183, y: 0.23}
+      - {x: -0.42818183, y: -0.21727273}
+      - {x: -0.42454547, y: -0.22090909}
+      - {x: -0.3918182, y: -0.29}
+      - {x: -0.31545454, y: -0.36636364}
+      - {x: -0.28454545, y: -0.41363636}
+      - {x: -0.2009091, y: -0.47545454}
+      - {x: 0.2409091, y: -0.47545454}
+      - {x: 0.30272728, y: -0.44454545}
+      - {x: 0.38818184, y: -0.40272728}
+      - {x: 0.4481818, y: -0.3190909}
 --- !u!50 &753114099
 Rigidbody2D:
   serializedVersion: 4
@@ -8096,23 +8086,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &753114100
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 753114097}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7a179f1c38359ef4d85967ca6455e183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &753114101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8121,9 +8094,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 753114097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09455e52b426245408306b70ee4104b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 16b571f2242d040468b30c5987e62825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCon: {fileID: 1672996778}
   moveSpeed: 5
 --- !u!212 &753114102
 SpriteRenderer:
@@ -8159,7 +8133,7 @@ SpriteRenderer:
   m_SortingLayerID: 1948724033
   m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4434575dce8e3f548a337a5cd36ddb3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2809336831d3884b98154eb5f0c05ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8176,7 +8150,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 753114097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13200,10 +13174,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1376613400328728, guid: df39f466cb1f59844a4d4368b69bfdb0, type: 2}
-      propertyPath: m_Name
-      value: house_door
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df39f466cb1f59844a4d4368b69bfdb0, type: 2}
   m_IsPrefabParent: 0
@@ -15539,7 +15509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfa335c6589dab43aa79e77965fe156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 1672996777}
+  player: {fileID: 1672996777}
+  ghost: {fileID: 753114097}
   moveSpeed: 5
 --- !u!1001 &1512977155
 Prefab:
@@ -16576,7 +16547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1672996778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16589,6 +16560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  ghostCon: {fileID: 753114101}
 --- !u!212 &1672996779
 SpriteRenderer:
   m_ObjectHideFlags: 0
