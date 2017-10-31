@@ -6,23 +6,21 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
     public GhostController ghostCon;
+    public Vector2 respawnPosition;
 
     private Animator anim;
     private Rigidbody2D myRigidbody;
 
-	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 	
-	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown("c"))
         {
-            gameObject.SetActive(false);
+            disable();
             ghostCon.enable(transform.position);
-            
 
         }
         moveplayer();
@@ -31,8 +29,16 @@ public class PlayerController : MonoBehaviour {
 
     public void enable()
     {
-        gameObject.SetActive(true);
         PlayerState.state = PlayerState.playerState.Player;
+        GetComponent<Animator>().enabled = true;
+        myRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    private void disable()
+    {
+        GetComponent<Animator>().enabled = false;
+        myRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+
     }
 
     private void moveplayer()
@@ -60,6 +66,7 @@ public class PlayerController : MonoBehaviour {
     public void caughtByGuard()
     {
         print("You have been caught by a guard");
+        transform.position = respawnPosition;
     }
 
     

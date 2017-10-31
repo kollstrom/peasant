@@ -7,17 +7,15 @@ public class GhostController : MonoBehaviour
     public PlayerController playerCon;
     public float moveSpeed;
 
-    private Animator anim;
+    //private Animator anim;
     private Rigidbody2D myRigidbody;
 
-    // Use this for initialization
     void Start()
     {
         //anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("c"))

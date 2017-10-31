@@ -6,25 +6,26 @@ public class CameraController : MonoBehaviour {
 
     public GameObject player;
     public GameObject ghost;
-    private Vector3 targetPos;
     public float moveSpeed;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+    private Vector3 targetPos;
+
 	void LateUpdate () {
-        if(PlayerState.state == PlayerState.playerState.Player)
+        if(PlayerState.state == PlayerState.playerState.Ghost)
         {
-            targetPos = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+            targetPos = new Vector3(ghost.transform.position.x, ghost.transform.position.y, transform.position.z);
+            
         }
         else
         {
-            targetPos = new Vector3(ghost.transform.position.x, ghost.transform.position.y, transform.position.z);
+            targetPos = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
         }
         
         transform.position = Vector3.Lerp(transform.position, targetPos, moveSpeed * Time.deltaTime);
 	}
+
+    public void setCameraPosition(Vector2 v2)
+    {
+        transform.position = new Vector3(v2.x, v2.y, transform.position.z);
+    }
 }

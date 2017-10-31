@@ -18,11 +18,9 @@ public class GuardController : MonoBehaviour {
     private Vector2 vectorRight;
     private Vector2 vectorLeft;
 
-    private float bounceFromWall = 0.07f;
+    private float bounceFromWall = 0.1f;
 
 
-
-    // Use this for initialization
     void Start () {
         circleCol = GetComponent<CircleCollider2D>();
         boxCol = GetComponent<BoxCollider2D>();
@@ -35,7 +33,6 @@ public class GuardController : MonoBehaviour {
         vectorLeft = new Vector2(-1 * moveSpeed, 0);
     }
 	
-	// Update is called once per frame
 	void Update () {
         switch (PlayerState.state)
         {
@@ -67,12 +64,14 @@ public class GuardController : MonoBehaviour {
         {
             if (y > Mathf.Abs(x)) //ghost is under guard
             {
+                transform.localEulerAngles = new Vector3(0, 0, 180);
                 myRigidbody.velocity = vectorUp;
                 lastMoveDirection = vectorUp;
                 moving = true;
             }
             else if (y < Mathf.Abs(x)) //ghost is over guard
             {
+                transform.localEulerAngles = new Vector3(0, 0, 0);
                 myRigidbody.velocity = vectorDown;
                 lastMoveDirection = vectorDown;
                 moving = true;
@@ -81,12 +80,14 @@ public class GuardController : MonoBehaviour {
         {
             if (x > Mathf.Abs(y)) //ghost is left of guard
             {
+                transform.localEulerAngles = new Vector3(0, 0, 90);
                 myRigidbody.velocity = vectorRight;
                 lastMoveDirection = vectorRight;
                 moving = true;
             }
             else if (x < Mathf.Abs(y)) //ghost is right guard
             {
+                transform.localEulerAngles = new Vector3(0, 0, 270);
                 myRigidbody.velocity = vectorLeft;
                 lastMoveDirection = vectorLeft;
                 moving = true;
@@ -104,22 +105,18 @@ public class GuardController : MonoBehaviour {
             if(lastMoveDirection == vectorUp)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y - bounceFromWall);
-                transform.localEulerAngles = new Vector3(0,0,0);
             }
             else if (lastMoveDirection == vectorDown)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y + bounceFromWall);
-                transform.localEulerAngles = new Vector3(0, 0, 180);
             }
             else if (lastMoveDirection == vectorRight)
             {
                 transform.position = new Vector3(transform.position.x - bounceFromWall, transform.position.y);
-                transform.localEulerAngles = new Vector3(0, 0, 270);
             }
             else if (lastMoveDirection == vectorLeft)
             {
                 transform.position = new Vector3(transform.position.x + bounceFromWall, transform.position.y);
-                transform.localEulerAngles = new Vector3(0, 0, 90);
             }
         }
 
