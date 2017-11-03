@@ -10,14 +10,18 @@ public class GhostController : MonoBehaviour
     private Animator anim;
     private Rigidbody2D myRigidbody;
 
+    SpriteRenderer sr;
+
     void Start()
     {
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+        sr.color = new Color(1f, 1f, 1f, .5f);
         if (Input.GetKeyDown("c"))
         {
             gameObject.SetActive(false);
