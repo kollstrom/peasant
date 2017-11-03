@@ -7,12 +7,12 @@ public class GhostController : MonoBehaviour
     public PlayerController playerCon;
     public float moveSpeed;
 
-    //private Animator anim;
+    private Animator anim;
     private Rigidbody2D myRigidbody;
 
     void Start()
     {
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -52,8 +52,8 @@ public class GhostController : MonoBehaviour
             myRigidbody.velocity = new Vector2(0f, 0f);
         }
 
-        //anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
-        //anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
     }
 
 
