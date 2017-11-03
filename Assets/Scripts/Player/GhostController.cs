@@ -7,22 +7,42 @@ public class GhostController : MonoBehaviour
     public PlayerController playerCon;
     public float moveSpeed;
 
-    //private Animator anim;
+    private Animator anim;
     private Rigidbody2D myRigidbody;
+
+    private SpriteRenderer sr;
+    private float nonOpaqueTimeLeft;
+    public float nonOpaqueTime;
 
     void Start()
     {
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        nonOpaqueTimeLeft = 0;
     }
 
     void Update()
     {
+        
         if (Input.GetKeyDown("c"))
         {
             gameObject.SetActive(false);
             playerCon.enable();
 
+        }
+        if (Input.GetKeyDown("space"))
+        {
+            nonOpaqueTimeLeft = nonOpaqueTime;
+        }
+        if (nonOpaqueTimeLeft > 0)
+        {
+            nonOpaqueTimeLeft -= Time.deltaTime;
+            sr.color = new Color(1f, 1f, 1f, 1f);
+        }
+        else
+        {
+            sr.color = new Color(1f, 1f, 1f, .5f);
         }
         moveplayer();
     }
@@ -52,8 +72,8 @@ public class GhostController : MonoBehaviour
             myRigidbody.velocity = new Vector2(0f, 0f);
         }
 
-        //anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
-        //anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
     }
 
 
