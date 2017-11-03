@@ -10,23 +10,39 @@ public class GhostController : MonoBehaviour
     private Animator anim;
     private Rigidbody2D myRigidbody;
 
-    SpriteRenderer sr;
+    private SpriteRenderer sr;
+    private float nonOpaqueTimeLeft;
+    public float nonOpaqueTime;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        nonOpaqueTimeLeft = 0;
     }
 
     void Update()
     {
-        sr.color = new Color(1f, 1f, 1f, .5f);
+        
         if (Input.GetKeyDown("c"))
         {
             gameObject.SetActive(false);
             playerCon.enable();
 
+        }
+        if (Input.GetKeyDown("space"))
+        {
+            nonOpaqueTimeLeft = nonOpaqueTime;
+        }
+        if (nonOpaqueTimeLeft > 0)
+        {
+            nonOpaqueTimeLeft -= Time.deltaTime;
+            sr.color = new Color(1f, 1f, 1f, 1f);
+        }
+        else
+        {
+            sr.color = new Color(1f, 1f, 1f, .5f);
         }
         moveplayer();
     }
