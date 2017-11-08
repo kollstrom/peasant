@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - verticalFence
-  - horizontalFence
+  - Guard
+  - Ghost
   layers:
   - Default
   - TransparentFX
@@ -18,8 +18,8 @@ TagManager:
   - Collision
   - Player
   - Ground
-  - 
-  - 
+  - Guard
+  - Ghost
   - 
   - 
   - 
@@ -40,11 +40,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Ground
     uniqueID: 2798080837
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: BehindPlayer
     uniqueID: 2352852931
@@ -54,4 +54,7 @@ TagManager:
     locked: 0
   - name: InFrontOfPlayer
     uniqueID: 1271776969
+    locked: 0
+  - name: Ghost
+    uniqueID: 1948724033
     locked: 0

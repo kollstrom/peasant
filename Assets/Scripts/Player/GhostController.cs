@@ -2,43 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
-
+public class GhostController : MonoBehaviour
+{
+    public PlayerController playerCon;
     public float moveSpeed;
-    public GhostController ghostCon;
-    public Vector2 respawnPosition;
 
     private Animator anim;
     private Rigidbody2D myRigidbody;
 
-	void Start () {
+    private SpriteRenderer sr;
+    private float nonOpaqueTimeLeft;
+    public float nonOpaqueTime;
+
+    void Start()
+    {
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        nonOpaqueTimeLeft = 0;
     }
-	
-	void Update () {
+
+    void Update()
+    {
+        
         if (Input.GetKeyDown("c"))
         {
-            disable();
-            ghostCon.enable(transform.position);
+            gameObject.SetActive(false);
+            playerCon.enable();
 
         }
+        if (Input.GetKeyDown("space"))
+        {
+            nonOpaqueTimeLeft = nonOpaqueTime;
+        }
+        if (nonOpaqueTimeLeft > 0)
+        {
+            nonOpaqueTimeLeft -= Time.deltaTime;
+            sr.color = new Color(1f, 1f, 1f, 1f);
+        }
+        else
+        {
+            sr.color = new Color(1f, 1f, 1f, .5f);
+        }
         moveplayer();
-        
     }
 
-    public void enable()
+    public void enable(Vector3 pos)
     {
-        PlayerState.state = PlayerState.playerState.Player;
-        GetComponent<Animator>().enabled = true;
-        myRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-    }
-
-    private void disable()
-    {
-        GetComponent<Animator>().enabled = false;
-        myRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-
+        transform.position = pos;
+        gameObject.SetActive(true);
+        PlayerState.state = PlayerState.playerState.Ghost;
     }
 
     private void moveplayer()
@@ -63,11 +76,6 @@ public class PlayerController : MonoBehaviour {
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
     }
 
-    public void caughtByGuard()
-    {
-        print("You have been caught by a guard");
-        transform.position = respawnPosition;
-    }
 
-    
 }
+
