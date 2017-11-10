@@ -7,26 +7,29 @@ public class DialogHolder : MonoBehaviour {
 
     public string dialogue;
 
-    public GameObject imageGameObject;
+    public GameObject spaceButtonImage;
 
-	// Use this for initialization
 	void Start () {
-        imageGameObject.SetActive(false);
+        spaceButtonImage.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if(Input.GetKeyDown("c"))
+        {
+            playerIsActive = false;
+            spaceButtonImage.SetActive(false);
+        }
 	}
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player")
         {
             // Show "Space" icon
-            imageGameObject.SetActive(true);
+            spaceButtonImage.SetActive(true);
 
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 // Show dialogue box
             }
@@ -38,7 +41,7 @@ public class DialogHolder : MonoBehaviour {
         // Hide "Space" icon
         if(collision.gameObject.name == "Player")
         {
-            imageGameObject.SetActive(false);
+            spaceButtonImage.SetActive(false);
         }
     }
 }
