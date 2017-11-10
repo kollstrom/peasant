@@ -17,7 +17,6 @@ public class DialogHolder : MonoBehaviour {
 	void Update () {
         if(Input.GetKeyDown("c"))
         {
-            playerIsActive = false;
             spaceButtonImage.SetActive(false);
         }
 	}
