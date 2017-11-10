@@ -21,9 +21,12 @@ public class GuardController : MonoBehaviour
 
     private float bounceFromWall = 0.1f;
 
+    public GameObject spaceButtonImage;
 
-    void Start()
-    {
+
+
+    void Start () {
+        spaceButtonImage.SetActive(false);
         circleCol = GetComponent<CircleCollider2D>();
         boxCol = GetComponent<BoxCollider2D>();
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -140,6 +143,7 @@ public class GuardController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ghost")
         {
+            spaceButtonImage.SetActive(true);
             ghostInTrigger = true;
             ghostPosition = collision.transform.position;
 
@@ -150,6 +154,7 @@ public class GuardController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ghost")
         {
+            spaceButtonImage.SetActive(false);
             ghostInTrigger = false;
 
         }
