@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuardController : MonoBehaviour {
+public class GuardController : MonoBehaviour
+{
 
     public float moveSpeed;
 
@@ -23,6 +24,7 @@ public class GuardController : MonoBehaviour {
     public GameObject spaceButtonImage;
 
 
+
     void Start () {
         spaceButtonImage.SetActive(false);
         circleCol = GetComponent<CircleCollider2D>();
@@ -35,8 +37,9 @@ public class GuardController : MonoBehaviour {
         vectorRight = new Vector2(1 * moveSpeed, 0);
         vectorLeft = new Vector2(-1 * moveSpeed, 0);
     }
-	
-	void Update () {
+
+    void Update()
+    {
         switch (PlayerState.state)
         {
             case PlayerState.playerState.Player:
@@ -61,9 +64,9 @@ public class GuardController : MonoBehaviour {
     {
         float x = transform.position.x - v.x;
         float y = transform.position.y - v.y;
-        float xyDiff = Mathf.Abs(x) -Mathf.Abs(y);
+        float xyDiff = Mathf.Abs(x) - Mathf.Abs(y);
 
-        if(xyDiff < 0) 
+        if (xyDiff < 0)
         {
             if (y > Mathf.Abs(x)) //ghost is under guard
             {
@@ -79,7 +82,8 @@ public class GuardController : MonoBehaviour {
                 lastMoveDirection = vectorDown;
                 moving = true;
             }
-        }else
+        }
+        else
         {
             if (x > Mathf.Abs(y)) //ghost is left of guard
             {
@@ -97,7 +101,7 @@ public class GuardController : MonoBehaviour {
             }
 
         }
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -105,7 +109,7 @@ public class GuardController : MonoBehaviour {
         myRigidbody.velocity = new Vector2(0f, 0f);
         if (moving)
         {
-            if(lastMoveDirection == vectorUp)
+            if (lastMoveDirection == vectorUp)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y - bounceFromWall);
             }
@@ -128,11 +132,11 @@ public class GuardController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             collision.GetComponent<PlayerController>().caughtByGuard();
         }
-        
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
