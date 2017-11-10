@@ -3530,6 +3530,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  startPoint: {x: 1, y: -2.5, z: 0}
+  endPoint: {x: -4, y: -2.5, z: 0}
 --- !u!61 &243682943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8099,6 +8101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCon: {fileID: 1672996778}
   moveSpeed: 5
+  nonOpaqueTime: 0
 --- !u!212 &753114102
 SpriteRenderer:
   m_ObjectHideFlags: 0
