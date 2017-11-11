@@ -61,7 +61,6 @@ public class DialogueManager : MonoBehaviour {
 
     public void EndDialogue()
     {
-        print("End of conversation");
         animator.SetBool("IsOpen", false);
         FindObjectOfType<PlayerController>().enable();
     }

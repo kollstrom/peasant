@@ -7668,9 +7668,9 @@ MonoBehaviour:
   dialogue:
     name: Rockman
     sentences:
-    - 'Dear! '
-    - Wake up!
-    - They have taken our kids.
+    - "DEAR! \u25BC"
+    - "WAKE UP! \u25BC"
+    - THEY HAVE TAKEN OUR KIDS. LET'S SEE HOW A LONG SENTENCE LOOKS LIKE!
 --- !u!61 &698886573
 BoxCollider2D:
   m_ObjectHideFlags: 0
