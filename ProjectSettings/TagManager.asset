@@ -15,12 +15,12 @@ TagManager:
   - UI
   - 
   - 
-  - Collision
+  - PlayerCollision
   - Player
   - Ground
   - Guard
   - Ghost
-  - 
+  - PlayerAndGhostCollision
   - 
   - 
   - 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 78b6a3e66e76a534fa6ee6ded03fc247
-timeCreated: 1509304776
+timeCreated: 1510396652
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,7 +13,7 @@ TextureImporter:
     21300012: dirt
     21300014: roguelikeSheet_transparent_7
     21300016: roguelikeSheet_transparent_8
-    21300018: roguelikeSheet_transparent_9
+    21300018: dungeon_wall_up
     21300020: roguelikeSheet_transparent_10
     21300022: roguelikeSheet_transparent_11
     21300024: roguelikeSheet_transparent_12
@@ -123,8 +123,8 @@ TextureImporter:
     21300232: roguelikeSheet_transparent_116
     21300234: roguelikeSheet_transparent_117
     21300236: roguelikeSheet_transparent_118
-    21300238: roguelikeSheet_transparent_119
-    21300240: roguelikeSheet_transparent_120
+    21300238: dungeon_floor_2
+    21300240: dungeon_floor
     21300242: roguelikeSheet_transparent_121
     21300244: roguelikeSheet_transparent_122
     21300246: roguelikeSheet_transparent_123
@@ -294,7 +294,7 @@ TextureImporter:
     21300574: roguelikeSheet_transparent_287
     21300576: roguelikeSheet_transparent_288
     21300578: roguelikeSheet_transparent_289
-    21300580: roguelikeSheet_transparent_290
+    21300580: dungeon_blocks
     21300582: roguelikeSheet_transparent_291
     21300584: roguelikeSheet_transparent_292
     21300586: roguelikeSheet_transparent_293
@@ -1248,7 +1248,7 @@ TextureImporter:
     21302482: house_10
     21302484: roguelikeSheet_transparent_1242
     21302486: roguelikeSheet_transparent_1243
-    21302488: roguelikeSheet_transparent_1244
+    21302488: dungeon_wall_down
     21302490: roguelikeSheet_transparent_1245
     21302492: roguelikeSheet_transparent_1246
     21302494: roguelikeSheet_transparent_1247
@@ -1328,8 +1328,8 @@ TextureImporter:
     21302642: roguelikeSheet_transparent_1321
     21302644: roguelikeSheet_transparent_1322
     21302646: roguelikeSheet_transparent_1323
-    21302648: roguelikeSheet_transparent_1324
-    21302650: roguelikeSheet_transparent_1325
+    21302648: dungeon_wall_left
+    21302650: dungeon_wall_right
     21302652: roguelikeSheet_transparent_1326
     21302654: roguelikeSheet_transparent_1327
     21302656: roguelikeSheet_transparent_1328
@@ -1998,7 +1998,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_9
+      name: dungeon_wall_up
       rect:
         serializedVersion: 2
         x: 153
@@ -4714,7 +4714,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_119
+      name: dungeon_floor_2
       rect:
         serializedVersion: 2
         x: 85
@@ -4736,7 +4736,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_120
+      name: dungeon_floor
       rect:
         serializedVersion: 2
         x: 102
@@ -8820,7 +8820,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_290
+      name: dungeon_blocks
       rect:
         serializedVersion: 2
         x: 153
@@ -31734,7 +31734,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1244
+      name: dungeon_wall_down
       rect:
         serializedVersion: 2
         x: 374
@@ -33636,7 +33636,7 @@ TextureImporter:
         - {x: -8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1324
+      name: dungeon_wall_left
       rect:
         serializedVersion: 2
         x: 850
@@ -33660,7 +33660,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1325
+      name: dungeon_wall_right
       rect:
         serializedVersion: 2
         x: 867
