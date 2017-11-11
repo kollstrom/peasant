@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour {
     private Animator anim;
     private Rigidbody2D myRigidbody;
 
+    private bool playerMoving;
+    private Vector2 lastMove;
+
 	void Start () {
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -46,13 +49,19 @@ public class PlayerController : MonoBehaviour {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
 
+        playerMoving = false;
+
         if (Mathf.Abs(inputX) > 0.5f)
         {
             myRigidbody.velocity = new Vector2(inputX * moveSpeed, 0);
+            playerMoving = true;
+            lastMove = new Vector2(inputX, 0);
         }
         else if (Mathf.Abs(inputY) > 0.5f)
         {
             myRigidbody.velocity = new Vector2(0, inputY * moveSpeed);
+            playerMoving = true;
+            lastMove = new Vector2(0, inputY);
         }
         else
         {
@@ -61,6 +70,10 @@ public class PlayerController : MonoBehaviour {
 
         anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        anim.SetBool("PlayerMoving", playerMoving);
+        anim.SetFloat("LastMoveX", lastMove.x);
+        anim.SetFloat("LastMoveY", lastMove.y);
+
     }
 
     public void caughtByGuard()
