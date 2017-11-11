@@ -13,4 +13,13 @@ public class CatchPlayer : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.GetComponent<PlayerController>().caughtByGuard();
+        }
+
+    }
 }
