@@ -25,11 +25,11 @@ public class DialogueManager : MonoBehaviour {
 
         string[] dialogueSentences = dialogue.sentences;
 
-        print(dialogue.name);
-
         if((dialogue.name.Equals("Captain") 
             && PlayerState.savedState == PlayerState.SavedState.Saved)
            || (dialogue.name.Equals("GuardMother")
+               && PlayerState.lunchState == PlayerState.LunchState.PickedUp)
+           || (dialogue.name.Equals("HungryGuard")
                && PlayerState.lunchState == PlayerState.LunchState.PickedUp))
         {
             dialogueSentences = dialogue.afterSentences;
