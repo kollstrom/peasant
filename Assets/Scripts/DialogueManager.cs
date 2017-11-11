@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour {
 
     public Text dialogueText;
 
+    public Animator animator;
+
     private Queue<string> sentences;
 
 	// Use this for initialization
@@ -18,7 +20,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue (Dialogue dialogue)
     {
-        print("Starting conversation with " + dialogue.name);
+        animator.SetBool("IsOpen", true);
         sentences.Clear();
 
         foreach(string sentence in dialogue.sentences)
@@ -49,6 +51,7 @@ public class DialogueManager : MonoBehaviour {
     public void EndDialogue()
     {
         print("End of conversation");
+        animator.SetBool("IsOpen", false);
         FindObjectOfType<PlayerController>().enable();
     }
 }
