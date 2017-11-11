@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Inspired by: Brackeys -> https://youtu.be/_nRzoTzeyxU
 
 public class DialogueManager : MonoBehaviour {
+
+    public Text dialogueText;
 
     private Queue<string> sentences;
 
@@ -34,7 +37,7 @@ public class DialogueManager : MonoBehaviour {
             return true;
         }
         string sentence = sentences.Dequeue();
-        print(sentence);
+        dialogueText.text = sentence;
         return false;
     }
 
