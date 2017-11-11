@@ -23,10 +23,22 @@ public class DialogueManager : MonoBehaviour {
         animator.SetBool("IsOpen", true);
         sentences.Clear();
 
-        foreach(string sentence in dialogue.sentences)
+        string[] dialogueSentences = dialogue.sentences;
+
+        print(dialogue.name);
+
+        if((dialogue.name.Equals("Captain") 
+            && PlayerState.savedState == PlayerState.SavedState.Saved)
+           || (dialogue.name.Equals("GuardMother")
+               && PlayerState.lunchState == PlayerState.LunchState.PickedUp))
         {
-            sentences.Enqueue(sentence);
+            dialogueSentences = dialogue.afterSentences;
         }
+            
+        foreach(string sentence in dialogueSentences)
+		{
+			sentences.Enqueue(sentence);
+		}
 
         DisplayNextSentence();
     }

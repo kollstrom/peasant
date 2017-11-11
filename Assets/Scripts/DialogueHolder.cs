@@ -9,8 +9,9 @@ public class DialogueHolder : MonoBehaviour {
 
     public Dialogue dialogue;
 
-    private bool withinReach;
     private bool isFinished = true;
+
+    private bool isWithinReach = false;
 
 	void Start () {
         spaceButtonImage.SetActive(false);
@@ -26,7 +27,7 @@ public class DialogueHolder : MonoBehaviour {
         {
             isFinished = FindObjectOfType<DialogueManager>().DisplayNextSentence();
         }
-        else if (Input.GetKeyUp(KeyCode.Space) && isWithinReach())
+        else if (Input.GetKeyUp(KeyCode.Space) && isWithinReach)
         {
             FindObjectOfType<PlayerController>().disable();
             isFinished = false;
@@ -40,11 +41,6 @@ public class DialogueHolder : MonoBehaviour {
         return FindObjectOfType<DialogueManager>().HasMoreSentences();
     }
 
-    private bool isWithinReach()
-    {
-        return spaceButtonImage.activeSelf;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("OnTriggerEnter2D");
@@ -52,6 +48,7 @@ public class DialogueHolder : MonoBehaviour {
         {
             // Show "Space" icon
             spaceButtonImage.SetActive(true);
+            isWithinReach = true;
         }
     }
 
@@ -62,6 +59,7 @@ public class DialogueHolder : MonoBehaviour {
         if(collision.gameObject.name == "Player")
         {
             spaceButtonImage.SetActive(false);
+            isWithinReach = false;
         }
     }
 

@@ -10,4 +10,18 @@ public class PlayerState : MonoBehaviour {
     }
 
     public static playerState state = playerState.Player;
+
+    public enum LunchState
+    {
+        PickedUp, NotPickedUp
+    }
+
+    public static LunchState lunchState = LunchState.NotPickedUp;
+
+    public enum SavedState
+    {
+        Saved, NotSaved
+    }
+
+    public static SavedState savedState = SavedState.NotSaved;
 }
