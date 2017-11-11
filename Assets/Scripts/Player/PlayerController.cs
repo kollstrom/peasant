@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
         myRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
-    private void disable()
+    public void disable()
     {
         GetComponent<Animator>().enabled = false;
         myRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
