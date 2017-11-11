@@ -72,8 +72,8 @@ public class GhostController : MonoBehaviour
             myRigidbody.velocity = new Vector2(0f, 0f);
         }
 
-        //anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
-        //anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
     }
 
 

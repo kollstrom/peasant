@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScaredByGhost : MonoBehaviour {
 
-    //public GameObject spaceButtonImage;
+    public GameObject spaceButtonImage;
 
     private bool ghostInTrigger = false;
     private Vector2 ghostPosition;
@@ -12,7 +12,7 @@ public class ScaredByGhost : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //spaceButtonImage.SetActive(false);
+        spaceButtonImage.SetActive(false);
         parentScript = transform.parent.gameObject.GetComponent<MovingGuard>();
         Debug.Log(parentScript.name);
     }
@@ -34,7 +34,7 @@ public class ScaredByGhost : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Ghost")
         {
-            //spaceButtonImage.SetActive(true);
+            spaceButtonImage.SetActive(true);
             ghostInTrigger = true;
             ghostPosition = collision.transform.position;
 
@@ -45,7 +45,7 @@ public class ScaredByGhost : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Ghost")
         {
-            //spaceButtonImage.SetActive(false);
+            spaceButtonImage.SetActive(false);
             ghostInTrigger = false;
 
         }
