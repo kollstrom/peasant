@@ -571,7 +571,7 @@ TextureImporter:
     21301128: roguelikeSheet_transparent_564
     21301130: tree_2
     21301132: roguelikeSheet_transparent_566
-    21301134: roguelikeSheet_transparent_567
+    21301134: tree_7
     21301136: tree_4
     21301138: roguelikeSheet_transparent_569
     21301140: roguelikeSheet_transparent_570
@@ -625,7 +625,7 @@ TextureImporter:
     21301236: roguelikeSheet_transparent_618
     21301238: tree_1
     21301240: roguelikeSheet_transparent_620
-    21301242: roguelikeSheet_transparent_621
+    21301242: tree_8
     21301244: tree_3
     21301246: roguelikeSheet_transparent_623
     21301248: roguelikeSheet_transparent_624
@@ -15760,7 +15760,7 @@ TextureImporter:
         - {x: 4, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_567
+      name: tree_7
       rect:
         serializedVersion: 2
         x: 255
@@ -17124,7 +17124,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_621
+      name: tree_8
       rect:
         serializedVersion: 2
         x: 255
