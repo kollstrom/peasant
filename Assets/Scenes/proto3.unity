@@ -438,7 +438,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 36227285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 773, y: 515.5, z: 0}
+  m_LocalPosition: {x: 841.5, y: 561, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 50501353}
@@ -7407,7 +7407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.953, g: 1, b: 0.828, a: 0.766}
+  m_Color: {r: 0.953, g: 1, b: 0.828, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7437,7 +7437,7 @@ Animator:
   m_GameObject: {fileID: 687051614}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 667d73a1843434d6699a695319c15112, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1d8c972c3563146a298247c7b219c859, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
