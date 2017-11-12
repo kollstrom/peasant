@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MovingGuard : MonoBehaviour
 {
@@ -30,8 +31,10 @@ public class MovingGuard : MonoBehaviour
     private float bounceFromWall = 0.1f;
 
     private Animator anim;
-    private float lastX;
-    private float lastY;
+    private float lastXPosition;
+    private float lastYPosition;
+    private float lastXMove;
+    private float lastYMove;
 
 
     void Start()
@@ -75,44 +78,64 @@ public class MovingGuard : MonoBehaviour
                 break;
         }
 
-        float currentX = transform.position.x;
-        float currentY = transform.position.y;
-        float x;
-        float y;
-        if (lastX > currentX)
+        float currentX = Truncate(transform.position.x);
+        float currentY = Truncate(transform.position.y);
+        float x = 0f; // Stays unchanged if not moving horizontally
+        float y = 0f; // Stays unchanged if not moving vertically
+        bool guardMoving = false;
+        if (DifferenceBigEnough(lastXPosition, currentX))
         {
-            // moving left
-            x = -1f;
+            if (lastXPosition > currentX)
+            {
+                // moving left
+                x = -1f;
+                guardMoving = true;
+            }
+            else if (lastXPosition < currentX)
+            {
+                // moving right
+                x = 1f;
+                guardMoving = true;
+            }
         }
-        else if (lastX < currentX)
+
+        if (DifferenceBigEnough(lastYPosition, currentY))
         {
-            // moving right
-            x = 1f;
+            if (lastYPosition > currentY)
+            {
+                // moving down
+                y = -1f;
+                guardMoving = true;
+            }
+            else if (lastYPosition < currentY)
+            {
+                // moving up
+                y = 1f;
+                guardMoving = true;
+            }
         }
-        else 
-        {
-            // not moving horizontally
-            x = 0f;
-        }
-        if (lastY > currentY)
-        {
-            // moving down
-            y = -1f;
-        }
-        else if (lastY < currentY)
-        {
-            // moving up
-            y = 1f;
-        }
-        else 
-        {
-            // not moving vertically
-            y = 0f;
-        }
-        lastX = transform.position.x;
-        lastY = transform.position.y    ;
+
+        lastXPosition = currentX;
+        lastYPosition = currentY;
+        anim.SetFloat("LastMoveX", lastXMove);
+        anim.SetFloat("LastMoveY", lastYMove);
+        lastXMove = x;
+        lastYMove = y;
         anim.SetFloat("MoveX", x);
         anim.SetFloat("MoveY", y);
+
+        anim.SetBool("GuardMoving", guardMoving);
+    }
+
+    private bool DifferenceBigEnough(float one, float two)
+    {
+        float difference = Math.Abs(one - two);
+        return difference > 0.015f;
+    }
+
+    private float Truncate(float value)
+    {
+        return (float) Math.Truncate(100 * value) / 100;
     }
 
 
