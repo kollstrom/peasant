@@ -438,7 +438,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 36227285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 595, y: 396.5, z: 0}
+  m_LocalPosition: {x: 204, y: 136, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 50501353}
@@ -19730,6 +19730,10 @@ MonoBehaviour:
   secondsAtWall: 2
   moveSpeed: 2
   endPoint: {x: -4, y: -3, z: 0}
+  up: {fileID: 21300014, guid: 08a393570bb544db1a9c6f970fd75ed4, type: 3}
+  down: {fileID: 21300004, guid: 08a393570bb544db1a9c6f970fd75ed4, type: 3}
+  left: {fileID: 21300010, guid: 08a393570bb544db1a9c6f970fd75ed4, type: 3}
+  right: {fileID: 21300022, guid: 08a393570bb544db1a9c6f970fd75ed4, type: 3}
   lastScarePoint: {x: 0, y: 0, z: 0}
   state: 0
 --- !u!50 &1884773591

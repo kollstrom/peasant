@@ -13,6 +13,9 @@ public class MovingGuard : MonoBehaviour
     public float moveSpeed;
     public Vector3 endPoint;
 
+    private SpriteRenderer spriteR;
+    private Sprite[] sprites;
+
     private Vector3 startPoint;
     private Vector3 currentPoint;
     [HideInInspector]
@@ -26,8 +29,6 @@ public class MovingGuard : MonoBehaviour
     private Vector2 vectorDown;
     private Vector2 vectorRight;
     private Vector2 vectorLeft;
-
-    private float bounceFromWall = 0.1f;
 
     private Animator anim;
     private float lastX;
@@ -46,6 +47,9 @@ public class MovingGuard : MonoBehaviour
         vectorLeft = new Vector2(-1 * moveSpeed, 0);
         startPoint = transform.position;
         currentPoint = endPoint;
+
+        spriteR = gameObject.GetComponent<SpriteRenderer>();
+        sprites = Resources.LoadAll<Sprite>("guard");
     }
 
     void Update()
@@ -79,12 +83,14 @@ public class MovingGuard : MonoBehaviour
         float currentY = transform.position.y;
         float x;
         float y;
-        if (lastX > currentX)
+        float xDiff = lastX - currentX;
+        float yDiff = lastY - currentY;
+        if (xDiff > moveSpeed / 100)
         {
             // moving left
             x = -1f;
         }
-        else if (lastX < currentX)
+        else if (xDiff < -moveSpeed / 100)
         {
             // moving right
             x = 1f;
@@ -94,12 +100,12 @@ public class MovingGuard : MonoBehaviour
             // not moving horizontally
             x = 0f;
         }
-        if (lastY > currentY)
+        if (yDiff > moveSpeed / 100)
         {
             // moving down
             y = -1f;
         }
-        else if (lastY < currentY)
+        else if (yDiff < -moveSpeed/100)
         {
             // moving up
             y = 1f;
@@ -110,7 +116,7 @@ public class MovingGuard : MonoBehaviour
             y = 0f;
         }
         lastX = transform.position.x;
-        lastY = transform.position.y    ;
+        lastY = transform.position.y;
         anim.SetFloat("MoveX", x);
         anim.SetFloat("MoveY", y);
     }
@@ -173,6 +179,7 @@ public class MovingGuard : MonoBehaviour
     public IEnumerator waitAtWall()
     {
         yield return new WaitForSecondsRealtime(secondsAtWall);
+        anim.enabled = true;
         state = GuardState.BackFromWall;
         StopCoroutine(waitAtWall());
     }
@@ -184,22 +191,27 @@ public class MovingGuard : MonoBehaviour
             myRigidbody.velocity = new Vector2(0f, 0f);
             if (lastMoveDirection == vectorUp)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y - bounceFromWall);
+                anim.enabled = false;
+                spriteR.sprite = sprites[6];
                 StartCoroutine(waitAtWall());
             }
             else if (lastMoveDirection == vectorDown)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y + bounceFromWall);
+                anim.enabled = false;
+                spriteR.sprite = sprites[2];
                 StartCoroutine(waitAtWall());
+
             }
             else if (lastMoveDirection == vectorRight)
             {
-                transform.position = new Vector3(transform.position.x - bounceFromWall, transform.position.y);
+                anim.enabled = false;
+                spriteR.sprite = sprites[5];
                 StartCoroutine(waitAtWall());
             }
             else if (lastMoveDirection == vectorLeft)
             {
-                transform.position = new Vector3(transform.position.x + bounceFromWall, transform.position.y);
+                anim.enabled = false;
+                spriteR.sprite = sprites[0];
                 StartCoroutine(waitAtWall());
             }
             

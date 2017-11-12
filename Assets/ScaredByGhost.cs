@@ -14,7 +14,6 @@ public class ScaredByGhost : MonoBehaviour {
     void Start () {
         spaceButtonImage.SetActive(false);
         parentScript = transform.parent.gameObject.GetComponent<MovingGuard>();
-        Debug.Log(parentScript.name);
     }
 	
 	// Update is called once per frame
