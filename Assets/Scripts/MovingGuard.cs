@@ -29,10 +29,16 @@ public class MovingGuard : MonoBehaviour
 
     private float bounceFromWall = 0.1f;
 
+    private Animator anim;
+    private float lastX;
+    private float lastY;
+
+
     void Start()
     {
         state = GuardState.Patrolling;
         myRigidbody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         lastMoveDirection = new Vector2(0f, 0f);
         vectorUp = new Vector2(0, 1 * moveSpeed);
         vectorDown = new Vector2(0, -1 * moveSpeed);
@@ -47,11 +53,16 @@ public class MovingGuard : MonoBehaviour
         if(transform.position == endPoint)
         {
             currentPoint = startPoint;
-        }else if(transform.position == startPoint)
+        }
+        else if(transform.position == startPoint)
         {
             currentPoint = endPoint;
         }
+        move();
+    }
 
+    private void move()
+    {
         switch (state)
         {
             case GuardState.Patrolling:
@@ -62,7 +73,46 @@ public class MovingGuard : MonoBehaviour
             case GuardState.BackFromWall:
                 backToPatroll();
                 break;
-        } 
+        }
+
+        float currentX = transform.position.x;
+        float currentY = transform.position.y;
+        float x;
+        float y;
+        if (lastX > currentX)
+        {
+            // moving left
+            x = -1f;
+        }
+        else if (lastX < currentX)
+        {
+            // moving right
+            x = 1f;
+        }
+        else 
+        {
+            // not moving horizontally
+            x = 0f;
+        }
+        if (lastY > currentY)
+        {
+            // moving down
+            y = -1f;
+        }
+        else if (lastY < currentY)
+        {
+            // moving up
+            y = 1f;
+        }
+        else 
+        {
+            // not moving vertically
+            y = 0f;
+        }
+        lastX = transform.position.x;
+        lastY = transform.position.y    ;
+        anim.SetFloat("MoveX", x);
+        anim.SetFloat("MoveY", y);
     }
 
 
@@ -94,13 +144,11 @@ public class MovingGuard : MonoBehaviour
         {
             if (y > Mathf.Abs(x)) //ghost is under guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 180);
                 myRigidbody.velocity = vectorUp;
                 lastMoveDirection = vectorUp;
             }
             else if (y < Mathf.Abs(x)) //ghost is over guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 0);
                 myRigidbody.velocity = vectorDown;
                 lastMoveDirection = vectorDown;
             }
@@ -109,13 +157,11 @@ public class MovingGuard : MonoBehaviour
         {
             if (x > Mathf.Abs(y)) //ghost is left of guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 90);
                 myRigidbody.velocity = vectorRight;
                 lastMoveDirection = vectorRight;
             }
             else if (x < Mathf.Abs(y)) //ghost is right guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 270);
                 myRigidbody.velocity = vectorLeft;
                 lastMoveDirection = vectorLeft;
             }
