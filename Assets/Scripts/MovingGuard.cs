@@ -62,6 +62,7 @@ public class MovingGuard : MonoBehaviour
             currentPoint = endPoint;
         }
         move();
+        print("anim.isActiveAndEnabled: " + anim.isActiveAndEnabled);
     }
 
     private void move()
@@ -114,13 +115,10 @@ public class MovingGuard : MonoBehaviour
                 guardMoving = true;
             }
         }
-
         lastXPosition = currentX;
         lastYPosition = currentY;
         anim.SetFloat("LastMoveX", lastXMove);
         anim.SetFloat("LastMoveY", lastYMove);
-        lastXMove = x;
-        lastYMove = y;
         anim.SetFloat("MoveX", x);
         anim.SetFloat("MoveY", y);
 
@@ -153,7 +151,6 @@ public class MovingGuard : MonoBehaviour
         {
             state = GuardState.Patrolling;
         }
-        
     }
 
     public void scared(Vector2 v)
@@ -188,45 +185,48 @@ public class MovingGuard : MonoBehaviour
                 myRigidbody.velocity = vectorLeft;
                 lastMoveDirection = vectorLeft;
             }
-
         }
-
     }
 
     public IEnumerator waitAtWall()
     {
         yield return new WaitForSecondsRealtime(secondsAtWall);
+        anim.enabled = true;
         state = GuardState.BackFromWall;
         StopCoroutine(waitAtWall());
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        anim.SetFloat("LastMoveX", lastXMove);
+        anim.SetFloat("LastMoveY", lastYMove);
         if (state == GuardState.Scared)  
         {
             myRigidbody.velocity = new Vector2(0f, 0f);
             if (lastMoveDirection == vectorUp)
             {
+                anim.enabled = false;
                 transform.position = new Vector3(transform.position.x, transform.position.y - bounceFromWall);
                 StartCoroutine(waitAtWall());
             }
             else if (lastMoveDirection == vectorDown)
             {
+                anim.enabled = false;
                 transform.position = new Vector3(transform.position.x, transform.position.y + bounceFromWall);
                 StartCoroutine(waitAtWall());
             }
             else if (lastMoveDirection == vectorRight)
             {
+                anim.enabled = false;
                 transform.position = new Vector3(transform.position.x - bounceFromWall, transform.position.y);
                 StartCoroutine(waitAtWall());
             }
             else if (lastMoveDirection == vectorLeft)
             {
+                anim.enabled = false;
                 transform.position = new Vector3(transform.position.x + bounceFromWall, transform.position.y);
                 StartCoroutine(waitAtWall());
             }
-            
-
         }
     }
 
