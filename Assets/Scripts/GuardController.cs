@@ -70,14 +70,12 @@ public class GuardController : MonoBehaviour
         {
             if (y > Mathf.Abs(x)) //ghost is under guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 180);
                 myRigidbody.velocity = vectorUp;
                 lastMoveDirection = vectorUp;
                 moving = true;
             }
             else if (y < Mathf.Abs(x)) //ghost is over guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 0);
                 myRigidbody.velocity = vectorDown;
                 lastMoveDirection = vectorDown;
                 moving = true;
@@ -87,14 +85,12 @@ public class GuardController : MonoBehaviour
         {
             if (x > Mathf.Abs(y)) //ghost is left of guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 90);
                 myRigidbody.velocity = vectorRight;
                 lastMoveDirection = vectorRight;
                 moving = true;
             }
             else if (x < Mathf.Abs(y)) //ghost is right guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 270);
                 myRigidbody.velocity = vectorLeft;
                 lastMoveDirection = vectorLeft;
                 moving = true;

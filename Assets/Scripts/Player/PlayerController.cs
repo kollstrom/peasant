@@ -68,8 +68,8 @@ public class PlayerController : MonoBehaviour {
             myRigidbody.velocity = new Vector2(0f, 0f);
         }
 
-        anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
-        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        anim.SetFloat("MoveX", inputX);
+        anim.SetFloat("MoveY", inputY);
         anim.SetBool("PlayerMoving", playerMoving);
         anim.SetFloat("LastMoveX", lastMove.x);
         anim.SetFloat("LastMoveY", lastMove.y);
