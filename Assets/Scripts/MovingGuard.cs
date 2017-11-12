@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MovingGuard : MonoBehaviour
 {
@@ -29,10 +30,18 @@ public class MovingGuard : MonoBehaviour
 
     private float bounceFromWall = 0.1f;
 
+    private Animator anim;
+    private float lastXPosition;
+    private float lastYPosition;
+    private float lastXMove;
+    private float lastYMove;
+
+
     void Start()
     {
         state = GuardState.Patrolling;
         myRigidbody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         lastMoveDirection = new Vector2(0f, 0f);
         vectorUp = new Vector2(0, 1 * moveSpeed);
         vectorDown = new Vector2(0, -1 * moveSpeed);
@@ -47,11 +56,17 @@ public class MovingGuard : MonoBehaviour
         if(transform.position == endPoint)
         {
             currentPoint = startPoint;
-        }else if(transform.position == startPoint)
+        }
+        else if(transform.position == startPoint)
         {
             currentPoint = endPoint;
         }
+        move();
+        print("anim.isActiveAndEnabled: " + anim.isActiveAndEnabled);
+    }
 
+    private void move()
+    {
         switch (state)
         {
             case GuardState.Patrolling:
@@ -62,7 +77,63 @@ public class MovingGuard : MonoBehaviour
             case GuardState.BackFromWall:
                 backToPatroll();
                 break;
-        } 
+        }
+
+        float currentX = Truncate(transform.position.x);
+        float currentY = Truncate(transform.position.y);
+        float x = 0f; // Stays unchanged if not moving horizontally
+        float y = 0f; // Stays unchanged if not moving vertically
+        bool guardMoving = false;
+        if (DifferenceBigEnough(lastXPosition, currentX))
+        {
+            if (lastXPosition > currentX)
+            {
+                // moving left
+                x = -1f;
+                guardMoving = true;
+            }
+            else if (lastXPosition < currentX)
+            {
+                // moving right
+                x = 1f;
+                guardMoving = true;
+            }
+        }
+
+        if (DifferenceBigEnough(lastYPosition, currentY))
+        {
+            if (lastYPosition > currentY)
+            {
+                // moving down
+                y = -1f;
+                guardMoving = true;
+            }
+            else if (lastYPosition < currentY)
+            {
+                // moving up
+                y = 1f;
+                guardMoving = true;
+            }
+        }
+        lastXPosition = currentX;
+        lastYPosition = currentY;
+        anim.SetFloat("LastMoveX", lastXMove);
+        anim.SetFloat("LastMoveY", lastYMove);
+        anim.SetFloat("MoveX", x);
+        anim.SetFloat("MoveY", y);
+
+        anim.SetBool("GuardMoving", guardMoving);
+    }
+
+    private bool DifferenceBigEnough(float one, float two)
+    {
+        float difference = Math.Abs(one - two);
+        return difference > 0.015f;
+    }
+
+    private float Truncate(float value)
+    {
+        return (float) Math.Truncate(100 * value) / 100;
     }
 
 
@@ -80,7 +151,6 @@ public class MovingGuard : MonoBehaviour
         {
             state = GuardState.Patrolling;
         }
-        
     }
 
     public void scared(Vector2 v)
@@ -94,13 +164,11 @@ public class MovingGuard : MonoBehaviour
         {
             if (y > Mathf.Abs(x)) //ghost is under guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 180);
                 myRigidbody.velocity = vectorUp;
                 lastMoveDirection = vectorUp;
             }
             else if (y < Mathf.Abs(x)) //ghost is over guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 0);
                 myRigidbody.velocity = vectorDown;
                 lastMoveDirection = vectorDown;
             }
@@ -109,55 +177,56 @@ public class MovingGuard : MonoBehaviour
         {
             if (x > Mathf.Abs(y)) //ghost is left of guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 90);
                 myRigidbody.velocity = vectorRight;
                 lastMoveDirection = vectorRight;
             }
             else if (x < Mathf.Abs(y)) //ghost is right guard
             {
-                transform.localEulerAngles = new Vector3(0, 0, 270);
                 myRigidbody.velocity = vectorLeft;
                 lastMoveDirection = vectorLeft;
             }
-
         }
-
     }
 
     public IEnumerator waitAtWall()
     {
         yield return new WaitForSecondsRealtime(secondsAtWall);
+        anim.enabled = true;
         state = GuardState.BackFromWall;
         StopCoroutine(waitAtWall());
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        anim.SetFloat("LastMoveX", lastXMove);
+        anim.SetFloat("LastMoveY", lastYMove);
         if (state == GuardState.Scared)  
         {
             myRigidbody.velocity = new Vector2(0f, 0f);
             if (lastMoveDirection == vectorUp)
             {
+                anim.enabled = false;
                 transform.position = new Vector3(transform.position.x, transform.position.y - bounceFromWall);
                 StartCoroutine(waitAtWall());
             }
             else if (lastMoveDirection == vectorDown)
             {
+                anim.enabled = false;
                 transform.position = new Vector3(transform.position.x, transform.position.y + bounceFromWall);
                 StartCoroutine(waitAtWall());
             }
             else if (lastMoveDirection == vectorRight)
             {
+                anim.enabled = false;
                 transform.position = new Vector3(transform.position.x - bounceFromWall, transform.position.y);
                 StartCoroutine(waitAtWall());
             }
             else if (lastMoveDirection == vectorLeft)
             {
+                anim.enabled = false;
                 transform.position = new Vector3(transform.position.x + bounceFromWall, transform.position.y);
                 StartCoroutine(waitAtWall());
             }
-            
-
         }
     }
 
