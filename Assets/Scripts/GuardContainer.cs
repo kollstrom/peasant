@@ -7,7 +7,15 @@ public class GuardContainer : MonoBehaviour {
     {
         foreach (Transform child in transform)
         {
-            child.gameObject.GetComponent<MovingGuard>().resetGuard();
+            if (child.tag == "MovingGuard")
+            {
+                child.gameObject.GetComponent<MovingGuard>().resetGuard();
+            }
+            else if (child.tag == "RotatingGuard")
+            {
+                child.gameObject.GetComponent<RotatingGuard>().resetGuard();
+            }
+            
         }
     }
 }
