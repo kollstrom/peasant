@@ -78,7 +78,6 @@ public class PlayerController : MonoBehaviour {
 
     public void caughtByGuard()
     {
-        print("You have been caught by a guard");
         transform.position = respawnPosition;
     }
 

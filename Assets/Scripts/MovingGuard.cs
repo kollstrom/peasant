@@ -15,6 +15,7 @@ public class MovingGuard : MonoBehaviour
 
     private SpriteRenderer spriteR;
     private Sprite[] sprites;
+    private CatchPlayer ChildCatchPlayer;
 
     private Vector3 startPoint;
     private Vector3 currentPoint;
@@ -50,6 +51,7 @@ public class MovingGuard : MonoBehaviour
 
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("guard");
+        ChildCatchPlayer = this.gameObject.transform.GetChild(0).GetComponent<CatchPlayer>();
     }
 
     void Update()
@@ -63,6 +65,14 @@ public class MovingGuard : MonoBehaviour
             currentPoint = endPoint;
         }
         move();
+    }
+
+    public void resetGuard()
+    {
+        transform.position = startPoint;
+        currentPoint = endPoint;
+        myRigidbody.velocity = new Vector2(0f, 0f);
+        state = GuardState.Patrolling;
     }
 
     private void move()
@@ -89,11 +99,13 @@ public class MovingGuard : MonoBehaviour
         {
             // moving left
             x = -1f;
+            ChildCatchPlayer.turn(270);
         }
         else if (xDiff < -moveSpeed / 100)
         {
             // moving right
             x = 1f;
+            ChildCatchPlayer.turn(90);
         }
         else 
         {
@@ -104,11 +116,13 @@ public class MovingGuard : MonoBehaviour
         {
             // moving down
             y = -1f;
+            ChildCatchPlayer.turn(0);
         }
         else if (yDiff < -moveSpeed/100)
         {
             // moving up
             y = 1f;
+            ChildCatchPlayer.turn(180);
         }
         else 
         {
@@ -126,6 +140,7 @@ public class MovingGuard : MonoBehaviour
     {
         float step = moveSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, currentPoint, step);
+
     }
 
     private void backToPatroll()
