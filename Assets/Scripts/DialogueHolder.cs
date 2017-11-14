@@ -43,7 +43,6 @@ public class DialogueHolder : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("OnTriggerEnter2D");
         if (collision.gameObject.name == "Player")
         {
             // Show "Space" icon
@@ -54,7 +53,6 @@ public class DialogueHolder : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        print("OnTriggerExit2D");
         // Hide "Space" icon
         if(collision.gameObject.name == "Player")
         {

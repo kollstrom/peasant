@@ -21,7 +21,6 @@ public class ScaredByGhost : MonoBehaviour {
 
         if (ghostInTrigger && Input.GetKeyDown("space") && parentScript.state == MovingGuard.GuardState.Patrolling)
         {
-            print("Guard has been scared");
             ghostInTrigger = false;
             parentScript.scared(ghostPosition);
             parentScript.lastScarePoint = transform.parent.position;
