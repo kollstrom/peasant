@@ -41,6 +41,11 @@ public class DialogueManager : MonoBehaviour {
 		}
 
         DisplayNextSentence();
+
+        if (dialogue.name.Equals("GuardMother"))
+        {
+            PlayerState.lunchState = PlayerState.LunchState.PickedUp;
+        }
     }
 
     public bool DisplayNextSentence()

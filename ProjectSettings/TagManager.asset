@@ -51,6 +51,9 @@ TagManager:
   - name: BehindPlayer
     uniqueID: 2352852931
     locked: 0
+  - name: NPC
+    uniqueID: 253592955
+    locked: 0
   - name: Player
     uniqueID: 3405386285
     locked: 0
