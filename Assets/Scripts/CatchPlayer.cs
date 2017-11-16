@@ -6,7 +6,6 @@ public class CatchPlayer : MonoBehaviour {
 
     private GuardContainer guardCont;
     private BoxCollider2D box2d;
-    private bool isScarableGuard;
     public LayerMask layermask;
 
     // Use this for initialization
@@ -17,13 +16,12 @@ public class CatchPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, 30, layermask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, 1000f, layermask);
 
         if (hit.collider != null)
         {
             box2d.offset = new Vector2(box2d.offset.x, -hit.distance/2);
             box2d.size = new Vector2(box2d.size.x, hit.distance);
-            //print(hit.collider.name);
         }
     }
 

@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingGuard : MonoBehaviour
+public class StandingGuard : MonoBehaviour
 {
     public enum GuardState
     {
-        Patrolling, Scared, BackFromWall 
+        Standing, Scared, BackFromWall
+    }
+
+    public enum Direction
+    {
+        Up, Down, Left, Right
     }
 
     public float secondsAtWall;
     public float moveSpeed;
     public float scareMoveSpeed;
-    public Vector3 target;
-    private Vector3 endPoint;
+    public Direction direction;
 
     private SpriteRenderer spriteR;
     private Sprite[] sprites;
     private CatchPlayer ChildCatchPlayer;
 
     private Vector3 startPoint;
-    private Vector3 currentPoint;
-    [HideInInspector]
-    public Vector3 lastScarePoint;
     [HideInInspector]
     public GuardState state;
 
@@ -40,58 +41,76 @@ public class MovingGuard : MonoBehaviour
 
     void Start()
     {
-        state = GuardState.Patrolling;
+        
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
         lastMoveDirection = new Vector2(0f, 0f);
         vectorUp = new Vector2(0, 1 * scareMoveSpeed);
         vectorDown = new Vector2(0, -1 * scareMoveSpeed);
         vectorRight = new Vector2(1 * scareMoveSpeed, 0);
         vectorLeft = new Vector2(-1 * scareMoveSpeed, 0);
+
+        state = GuardState.Standing;
         startPoint = transform.position;
-        currentPoint = endPoint;
 
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("guard");
+
         ChildCatchPlayer = this.gameObject.transform.GetChild(0).GetComponent<CatchPlayer>();
-        endPoint = new Vector3(startPoint.x + target.x, startPoint.y + target.y, startPoint.z + target.z);
     }
 
     void Update()
     {
-        if(transform.position == endPoint)
+        switch (state)
         {
-            currentPoint = startPoint;
+            case GuardState.Standing:
+                standWatch();
+                break;
+            case GuardState.Scared:
+                move();
+                break;
+            case GuardState.BackFromWall:
+                backToStanding();
+                move();
+                break;
         }
-        else if(transform.position == startPoint)
-        {
-            currentPoint = endPoint;
-        }
-        move();
+        
     }
 
     public void resetGuard()
     {
         transform.position = startPoint;
-        currentPoint = endPoint;
         myRigidbody.velocity = new Vector2(0f, 0f);
-        state = GuardState.Patrolling;
+        state = GuardState.Standing;
+    }
+
+    private void standWatch()
+    {
+        anim.enabled = false;
+        switch (direction)
+        {
+            case Direction.Up:
+                spriteR.sprite = sprites[6];
+                ChildCatchPlayer.turn(180);
+                break;
+            case Direction.Left:
+                spriteR.sprite = sprites[0];
+                ChildCatchPlayer.turn(270);
+                break;
+            case Direction.Down:
+                spriteR.sprite = sprites[2];
+                ChildCatchPlayer.turn(0);
+                break;
+            case Direction.Right:
+                spriteR.sprite = sprites[5];
+                ChildCatchPlayer.turn(90);
+                break;
+        }
     }
 
     private void move()
     {
-        switch (state)
-        {
-            case GuardState.Patrolling:
-                patroll();
-                break;
-            case GuardState.Scared:
-                break;
-            case GuardState.BackFromWall:
-                backToPatroll();
-                break;
-        }
-
         float currentX = transform.position.x;
         float currentY = transform.position.y;
         float x;
@@ -110,7 +129,7 @@ public class MovingGuard : MonoBehaviour
             x = 1f;
             ChildCatchPlayer.turn(90);
         }
-        else 
+        else
         {
             // not moving horizontally
             x = 0f;
@@ -127,7 +146,7 @@ public class MovingGuard : MonoBehaviour
             y = 1f;
             ChildCatchPlayer.turn(180);
         }
-        else 
+        else
         {
             // not moving vertically
             y = 0f;
@@ -138,27 +157,20 @@ public class MovingGuard : MonoBehaviour
         anim.SetFloat("MoveY", y);
     }
 
-
-    private void patroll()
+    private void backToStanding()
     {
         float step = moveSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, currentPoint, step);
-
-    }
-
-    private void backToPatroll()
-    {
-        float step = moveSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, lastScarePoint, step);
-        if(transform.position == lastScarePoint)
+        transform.position = Vector3.MoveTowards(transform.position, startPoint, step);
+        if (transform.position == startPoint)
         {
-            state = GuardState.Patrolling;
+            state = GuardState.Standing;
         }
-        
+
     }
 
     public void scared(Vector2 v)
     {
+        anim.enabled = true;
         state = GuardState.Scared;
         float x = transform.position.x - v.x;
         float y = transform.position.y - v.y;
@@ -204,7 +216,7 @@ public class MovingGuard : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (state == GuardState.Scared)  
+        if (state == GuardState.Scared)
         {
             myRigidbody.velocity = new Vector2(0f, 0f);
             if (lastMoveDirection == vectorUp)
@@ -232,10 +244,11 @@ public class MovingGuard : MonoBehaviour
                 spriteR.sprite = sprites[0];
                 StartCoroutine(waitAtWall());
             }
-            
+
 
         }
     }
 
 
 }
+
