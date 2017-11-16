@@ -6,7 +6,6 @@ public class CatchPlayer : MonoBehaviour {
 
     private GuardContainer guardCont;
     private BoxCollider2D box2d;
-    private bool isScarableGuard;
     public LayerMask layermask;
 
     // Use this for initialization
@@ -23,7 +22,6 @@ public class CatchPlayer : MonoBehaviour {
         {
             box2d.offset = new Vector2(box2d.offset.x, -hit.distance/2);
             box2d.size = new Vector2(box2d.size.x, hit.distance);
-            //print(hit.collider.name);
         }
     }
 
