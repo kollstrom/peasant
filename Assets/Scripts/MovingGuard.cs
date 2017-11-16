@@ -11,6 +11,7 @@ public class MovingGuard : MonoBehaviour
 
     public float secondsAtWall;
     public float moveSpeed;
+    public float scareMoveSpeed;
     public Vector3 target;
     private Vector3 endPoint;
 
@@ -43,10 +44,10 @@ public class MovingGuard : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         lastMoveDirection = new Vector2(0f, 0f);
-        vectorUp = new Vector2(0, 1 * moveSpeed);
-        vectorDown = new Vector2(0, -1 * moveSpeed);
-        vectorRight = new Vector2(1 * moveSpeed, 0);
-        vectorLeft = new Vector2(-1 * moveSpeed, 0);
+        vectorUp = new Vector2(0, 1 * scareMoveSpeed);
+        vectorDown = new Vector2(0, -1 * scareMoveSpeed);
+        vectorRight = new Vector2(1 * scareMoveSpeed, 0);
+        vectorLeft = new Vector2(-1 * scareMoveSpeed, 0);
         startPoint = transform.position;
         currentPoint = endPoint;
 
@@ -120,7 +121,7 @@ public class MovingGuard : MonoBehaviour
             y = -1f;
             ChildCatchPlayer.turn(0);
         }
-        else if (yDiff < -moveSpeed/100)
+        else if (yDiff < -moveSpeed / 100)
         {
             // moving up
             y = 1f;

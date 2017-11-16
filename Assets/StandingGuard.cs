@@ -16,6 +16,7 @@ public class StandingGuard : MonoBehaviour
 
     public float secondsAtWall;
     public float moveSpeed;
+    public float scareMoveSpeed;
     public Direction direction;
 
     private SpriteRenderer spriteR;
@@ -45,10 +46,10 @@ public class StandingGuard : MonoBehaviour
         anim = GetComponent<Animator>();
 
         lastMoveDirection = new Vector2(0f, 0f);
-        vectorUp = new Vector2(0, 1 * moveSpeed);
-        vectorDown = new Vector2(0, -1 * moveSpeed);
-        vectorRight = new Vector2(1 * moveSpeed, 0);
-        vectorLeft = new Vector2(-1 * moveSpeed, 0);
+        vectorUp = new Vector2(0, 1 * scareMoveSpeed);
+        vectorDown = new Vector2(0, -1 * scareMoveSpeed);
+        vectorRight = new Vector2(1 * scareMoveSpeed, 0);
+        vectorLeft = new Vector2(-1 * scareMoveSpeed, 0);
 
         state = GuardState.Standing;
         startPoint = transform.position;
