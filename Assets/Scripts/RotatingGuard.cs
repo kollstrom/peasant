@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class RotatingGuard : MonoBehaviour {
 
+    public enum Direction
+    {
+        Up, Left, Down, Right
+    }
+
+    public Direction startDirection;
     public bool directionUp;
     public bool directionLeft;
     public bool directionDown;
@@ -17,18 +23,21 @@ public class RotatingGuard : MonoBehaviour {
     private Sprite[] sprites;
     private List<string> directions = new List<string>();
 
+    private const string up = "up", left = "left", down = "down", right = "right";
+
     void Start () {
-        if (directionUp) directions.Add("up");
-        if (directionLeft) directions.Add("left");
-        if (directionDown) directions.Add("down");
-        if (directionRight) directions.Add("right");
+        if (directionUp) directions.Add(up);
+        if (directionLeft) directions.Add(left);
+        if (directionDown) directions.Add(down);
+        if (directionRight) directions.Add(right);
 
         ChildCatchPlayer = this.gameObject.transform.GetChild(0).GetComponent<CatchPlayer>();
 
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("guard");
-        currentDirectionIndex = 0;
-        rotate(directions[0]);
+
+        currentDirectionIndex = getStartDirection();
+        rotate(directions[currentDirectionIndex]);
     }
 	
 	void Update () {
@@ -42,24 +51,48 @@ public class RotatingGuard : MonoBehaviour {
         }
     }
 
+    private int getStartDirection()
+    {
+        if (startDirection == Direction.Up && directions.Contains(up))
+        {
+            return directions.IndexOf(up);
+        }
+        else if (startDirection == Direction.Left && directions.Contains(left))
+        {
+            return directions.IndexOf(left);
+        }
+        else if (startDirection == Direction.Down && directions.Contains(down))
+        {
+            return directions.IndexOf(down);
+        }
+        else if (startDirection == Direction.Right && directions.Contains(right))
+        {
+            return directions.IndexOf(right);
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
     private void rotate(string direction)
     {
-        if(direction == "up")
+        if(direction == up)
         {
             ChildCatchPlayer.turn(180);
             spriteR.sprite = sprites[6];
         } 
-        else if(direction == "left")
+        else if(direction == left)
         {
             ChildCatchPlayer.turn(270);
             spriteR.sprite = sprites[0];
         }
-        else if (direction == "down")
+        else if (direction == down)
         {
             ChildCatchPlayer.turn(0);
             spriteR.sprite = sprites[2];
         }
-        else if (direction == "right")
+        else if (direction == right)
         {
             ChildCatchPlayer.turn(90);
             spriteR.sprite = sprites[5];
@@ -68,8 +101,8 @@ public class RotatingGuard : MonoBehaviour {
 
     public void resetGuard()
     {
-        currentDirectionIndex = 0;
-        rotate(directions[0]);
+        currentDirectionIndex = getStartDirection();
+        rotate(directions[currentDirectionIndex]);
         timeSinceLastRotation = 0;
     }
 }
