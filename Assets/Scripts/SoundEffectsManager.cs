@@ -14,6 +14,8 @@ public class SoundEffectsManager : MonoBehaviour {
 
     public AudioSource swapToWomanSound;
 
+    public AudioSource checkpointSound;
+
 	// Use this for initialization
 	void Start () {
 		
