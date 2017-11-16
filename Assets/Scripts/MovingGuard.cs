@@ -11,7 +11,8 @@ public class MovingGuard : MonoBehaviour
 
     public float secondsAtWall;
     public float moveSpeed;
-    public Vector3 endPoint;
+    public Vector3 target;
+    private Vector3 endPoint;
 
     private SpriteRenderer spriteR;
     private Sprite[] sprites;
@@ -52,6 +53,7 @@ public class MovingGuard : MonoBehaviour
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("guard");
         ChildCatchPlayer = this.gameObject.transform.GetChild(0).GetComponent<CatchPlayer>();
+        endPoint = new Vector3(startPoint.x + target.x, startPoint.y + target.y, startPoint.z + target.z);
     }
 
     void Update()

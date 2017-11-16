@@ -8,6 +8,7 @@ TagManager:
   - Ghost
   - RotatingGuard
   - MovingGuard
+  - StandingGuard
   layers:
   - Default
   - TransparentFX
@@ -50,6 +51,9 @@ TagManager:
     locked: 0
   - name: BehindPlayer
     uniqueID: 2352852931
+    locked: 0
+  - name: NPC
+    uniqueID: 253592955
     locked: 0
   - name: Player
     uniqueID: 3405386285

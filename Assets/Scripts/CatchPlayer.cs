@@ -5,16 +5,27 @@ using UnityEngine;
 public class CatchPlayer : MonoBehaviour {
 
     private GuardContainer guardCont;
+    private BoxCollider2D box2d;
+    private bool isScarableGuard;
+    public LayerMask layermask;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         guardCont = transform.parent.parent.gameObject.GetComponent<GuardContainer>();
-    }
+        box2d = transform.gameObject.GetComponent<BoxCollider2D>();
+}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, 30, layermask);
+
+        if (hit.collider != null)
+        {
+            box2d.offset = new Vector2(box2d.offset.x, -hit.distance/2);
+            box2d.size = new Vector2(box2d.size.x, hit.distance);
+            //print(hit.collider.name);
+        }
+    }
 
 
     public void turn(float direction)

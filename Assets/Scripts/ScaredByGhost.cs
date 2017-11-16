@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ScaredByGhost : MonoBehaviour {
 
-    public GameObject spaceButtonImage;
-
+    private GameObject spaceButtonImage;
     private bool ghostInTrigger = false;
     private Vector2 ghostPosition;
     private MovingGuard parentScript;
 
     // Use this for initialization
     void Start () {
+        spaceButtonImage = GameObject.Find("/UI/Canvas/SpaceButton");
         spaceButtonImage.SetActive(false);
         parentScript = transform.parent.gameObject.GetComponent<MovingGuard>();
     }
