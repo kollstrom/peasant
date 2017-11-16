@@ -76,6 +76,11 @@ public class DialogueManager : MonoBehaviour {
         return sentences.Count > 0;
     }
 
+    public int SentencesCount()
+    {
+        return sentences.Count;
+    }
+
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
