@@ -13824,6 +13824,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4017312939930614, guid: 9bd5f97309d375148a33f0fb4425e6a9,
     type: 2}
   m_PrefabInternal: {fileID: 1460158350}
+--- !u!114 &399051015 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114295462399148172, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1007016724}
+  m_Script: {fileID: 11500000, guid: 95f6d1ec90e70f748b159f7afb039db0, type: 3}
 --- !u!1001 &399098423
 Prefab:
   m_ObjectHideFlags: 0
@@ -18831,9 +18837,9 @@ MonoBehaviour:
   dialogue:
     name: Prisoner
     sentences:
-    - "THE PRISON GUARDS ACT ALL TOUGH AND SCARY. \u25BC"
-    - "BUT I HEAR THAT SOME OF THEM ARE OF THE SUPERSTITIOUS TYPE. \u25BC"
-    - AFRAID OF SPOOKY STUFF!
+    - "WOW, THANKS FOR GETTING ME OUT OF HERE! \u25BC"
+    - "MY CAPTAIN IS PROBABLY FURIOUS WITH ME BEING GONE FOR THE NIGHT. \u25BC"
+    - "BETTER GET BACK TO THE SHIP. \r\n"
     afterSentences: []
 --- !u!61 &538752669
 BoxCollider2D:
@@ -18847,7 +18853,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.77}
+  m_Offset: {x: 0, y: -1.0218506}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -18858,7 +18864,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.98, y: 0.95}
+  m_Size: {x: 1.9873962, y: 0.6621704}
   m_EdgeRadius: 0
 --- !u!1001 &539693855
 Prefab:
@@ -21737,7 +21743,7 @@ Transform:
   - {fileID: 500398261}
   - {fileID: 136176051}
   m_Father: {fileID: 1083974831}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &637311237
 Prefab:
@@ -23007,7 +23013,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 668464192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 190.46, y: -138.68, z: 0}
+  m_LocalPosition: {x: 235, y: -114.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -29884,7 +29890,6 @@ GameObject:
   - component: {fileID: 872196580}
   - component: {fileID: 872196579}
   - component: {fileID: 872196578}
-  - component: {fileID: 872196577}
   m_Layer: 0
   m_Name: prison-bars (1)
   m_TagString: Untagged
@@ -29892,31 +29897,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &872196577
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 872196576}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.82341385}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 1.40625}
-    newSize: {x: 2, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 0.63404083}
-  m_EdgeRadius: 0
 --- !u!61 &872196578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29940,7 +29920,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 2, y: 1.40625}
   m_EdgeRadius: 0
 --- !u!212 &872196579
 SpriteRenderer:
@@ -29993,7 +29973,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 872196576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 84.499985, y: 27.201996, z: 0}
+  m_LocalPosition: {x: 81.5, y: 27.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1083974831}
@@ -35413,6 +35393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1019170472}
   - component: {fileID: 1019170473}
+  - component: {fileID: 1019170474}
   m_Layer: 0
   m_Name: Prisoner
   m_TagString: Untagged
@@ -35427,12 +35408,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019170471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81.499985, y: 27.240005, z: 0}
+  m_LocalPosition: {x: 84.5, y: 27.240005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 538752667}
   m_Father: {fileID: 1083974831}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1019170473
 SpriteRenderer:
@@ -35478,6 +35459,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1019170474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1019170471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15ae4c841ca6c84eab817c4dbec4266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escape: 0
+  moveSpeed: 3
+  teleportOut: {fileID: 1607001195}
+  teleportIn: {fileID: 399051015}
+  dialogManager: {fileID: 767056646}
 --- !u!1001 &1020392841
 Prefab:
   m_ObjectHideFlags: 0
@@ -36941,10 +36938,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1019170472}
   - {fileID: 637274215}
+  - {fileID: 1019170472}
   - {fileID: 1446449864}
   - {fileID: 872196580}
+  - {fileID: 1607001194}
   m_Father: {fileID: 299420205}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50140,6 +50138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cdba933ed6199d4d9bb577a59c99d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaceButtonImage: {fileID: 1328182134}
+  dialogManager: {fileID: 767056646}
+  prisoner: {fileID: 1019170474}
 --- !u!61 &1446449861
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50152,7 +50153,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.1870995}
+  m_Offset: {x: 0, y: -1.016201}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -50163,7 +50164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.95072174}
+  m_Size: {x: 2, y: 0.60892487}
   m_EdgeRadius: 0
 --- !u!61 &1446449862
 BoxCollider2D:
@@ -50241,7 +50242,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1446449859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81.499985, y: 27.201996, z: 0}
+  m_LocalPosition: {x: 84.5, y: 27.201996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1083974831}
@@ -55751,6 +55752,17 @@ Transform:
   m_PrefabParentObject: {fileID: 4939177268043550, guid: 2bbacc082cc56a946be581f80413f93e,
     type: 2}
   m_PrefabInternal: {fileID: 1606994675}
+--- !u!4 &1607001194 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4614189205952944, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1868364778}
+--- !u!114 &1607001195 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114295462399148172, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1868364778}
+  m_Script: {fileID: 11500000, guid: 95f6d1ec90e70f748b159f7afb039db0, type: 3}
 --- !u!4 &1607333048 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4017312939930614, guid: 9bd5f97309d375148a33f0fb4425e6a9,
@@ -64123,6 +64135,91 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 23280ebeab55b8d4d8ef4741028b8bd8, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1868364778
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1083974831}
+    m_Modifications:
+    - target: {fileID: 4614189205952944, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 84.56999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614189205952944, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 26.029999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614189205952944, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614189205952944, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614189205952944, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614189205952944, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614189205952944, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614189205952944, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 61633229559182838, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.051071167
+      objectReference: {fileID: 0}
+    - target: {fileID: 61633229559182838, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2.010437
+      objectReference: {fileID: 0}
+    - target: {fileID: 114295462399148172, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+        type: 2}
+      propertyPath: teleportPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114295462399148172, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+        type: 2}
+      propertyPath: teleportPosition.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378080240303628, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_Name
+      value: Teleporter (out of dungeon) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114295462399148172, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+        type: 2}
+      propertyPath: camController
+      value: 
+      objectReference: {fileID: 639263481}
+    - target: {fileID: 1378080240303628, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61633229559182838, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.14391172
+      objectReference: {fileID: 0}
+    - target: {fileID: 61633229559182838, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.1878235
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1869007769
 Prefab:
@@ -72536,7 +72633,9 @@ MonoBehaviour:
     - "YEAH, I BE GOIN' T' TH' CAPITAL. \u25BC"
     - "TH' PROBLEM BE THAT ONE O' ME CREW HAS GONE MISSIN'. \u25BC"
     - "I WONDER WHA' TROUBLE HE HAS GOTTEN HISSELF INTO.\r"
-    afterSentences: []
+    afterSentences:
+    - YE SAVED ME CREWMATE!
+    - "O' COURSE I'LL LET YE ABOARD ME SHIP. WE BE LEAVIN' FER TH' CAPITAL TODAY.\r\n"
 --- !u!61 &2105756185
 BoxCollider2D:
   m_ObjectHideFlags: 0
