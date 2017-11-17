@@ -52,7 +52,12 @@ public class DialogueHolder : MonoBehaviour {
                 {
                     sfxManager.obtainedLunchSound.Play();
                 }
-
+            }
+            else if (dialogue.name.Equals("HungryGuard") &&
+                         PlayerState.lunchState == PlayerState.LunchState.PickedUp)
+            {
+                // Trigger opening castle door animation
+                sfxManager.openDoorSound.Play();
             }
         }
         else if (Input.GetKeyUp(KeyCode.Space) && isWithinReach)

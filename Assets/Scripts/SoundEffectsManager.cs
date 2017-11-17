@@ -16,6 +16,11 @@ public class SoundEffectsManager : MonoBehaviour {
 
     public AudioSource checkpointSound;
 
+    public AudioSource caughtByGuardSound;
+
+    public AudioSource closeDoorSound;
+    public AudioSource openDoorSound;
+
 	// Use this for initialization
 	void Start () {
 		
