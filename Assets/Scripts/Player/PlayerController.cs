@@ -14,9 +14,13 @@ public class PlayerController : MonoBehaviour {
     private bool playerMoving;
     private Vector2 lastMove;
 
+    private SoundEffectsManager sfxManager;
+
 	void Start () {
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        sfxManager = FindObjectOfType<SoundEffectsManager>();
+
     }
 	
 	void Update () {
@@ -78,6 +82,7 @@ public class PlayerController : MonoBehaviour {
 
     public void caughtByGuard()
     {
+        sfxManager.caughtByGuardSound.Play();
         transform.position = respawnPosition;
     }
 

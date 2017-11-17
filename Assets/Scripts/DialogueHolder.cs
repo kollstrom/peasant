@@ -9,12 +9,17 @@ public class DialogueHolder : MonoBehaviour {
 
     public Dialogue dialogue;
 
+    private SoundEffectsManager sfxManager;
+
     private bool isFinished = true;
 
     private bool isWithinReach = false;
 
+    private bool isGhost = false;
+
 	void Start () {
         spaceButtonImage.SetActive(false);
+        sfxManager = FindObjectOfType<SoundEffectsManager>();
 	}
 	
 	// Update is called once per frame
@@ -22,18 +27,47 @@ public class DialogueHolder : MonoBehaviour {
         if(Input.GetKeyDown("c"))
         {
             spaceButtonImage.SetActive(false);
+            if (isGhost)
+            {
+                sfxManager.swapToWomanSound.Play();
+            }
+            else 
+            {
+                sfxManager.swapToGhostSound.Play();
+            }
+            isGhost = !isGhost;
         }
         else if (Input.GetKeyUp(KeyCode.Space) && !isFinished)
         {
-            isFinished = FindObjectOfType<DialogueManager>().DisplayNextSentence();
+            DialogueManager diaMan = FindObjectOfType<DialogueManager>();
+            isFinished = diaMan.DisplayNextSentence();
+            if (!isFinished)
+            {
+                if (!(dialogue.name.Equals("GuardMother") 
+                     && diaMan.SentencesCount() == 0))
+                {
+                    sfxManager.nextSound.Play();
+                }
+                else if  (dialogue.name.Equals("GuardMother"))
+                {
+                    sfxManager.obtainedLunchSound.Play();
+                }
+            }
+            else if (dialogue.name.Equals("HungryGuard") &&
+                         PlayerState.lunchState == PlayerState.LunchState.PickedUp)
+            {
+                // Trigger opening castle door animation
+                sfxManager.openDoorSound.Play();
+            }
         }
         else if (Input.GetKeyUp(KeyCode.Space) && isWithinReach)
         {
+            // play next sound
             FindObjectOfType<PlayerController>().disable();
             isFinished = false;
             TriggerDialogue();
+            sfxManager.nextSound.Play();
         }
-
 	}
 
     private bool dialogueHasMoreSentences()
