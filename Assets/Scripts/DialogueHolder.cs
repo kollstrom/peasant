@@ -61,7 +61,7 @@ public class DialogueHolder : MonoBehaviour {
         }
     }
 
-    private void TriggerDialogue()
+    public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }

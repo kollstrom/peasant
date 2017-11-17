@@ -24,4 +24,11 @@ public class PlayerState : MonoBehaviour {
     }
 
     public static SavedState savedState = SavedState.NotSaved;
+
+    public enum GhostPlayable
+    {
+        Yes, No
+    }
+
+    public static GhostPlayable ghostPlayable = GhostPlayable.No;
 }

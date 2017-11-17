@@ -10,6 +10,7 @@ public class Prisoner : MonoBehaviour {
     public TeleportController teleportOut;
     public TeleportController teleportIn;
     public DialogueManager dialogManager;
+    public SetGhostPlayble setGhostPlayable;
 
     private float step;
     private Vector3 firstPoint;
@@ -38,6 +39,7 @@ public class Prisoner : MonoBehaviour {
             {
                 dialogManager.EndDialogue();
                 gameObject.SetActive(false);
+                setGhostPlayable.gameObject.SetActive(true);
                 teleportOut.gameObject.SetActive(true);
                 teleportIn.gameObject.SetActive(false);
                 PlayerState.savedState = PlayerState.SavedState.Saved;

@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
     }
 	
 	void Update () {
-        if (Input.GetKeyDown("c"))
+        if (Input.GetKeyDown("c") && PlayerState.ghostPlayable == PlayerState.GhostPlayable.Yes)
         {
             disable();
             ghostCon.enable(transform.position);
