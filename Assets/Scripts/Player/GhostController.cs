@@ -28,7 +28,7 @@ public class GhostController : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown("c"))
+        if (Input.GetKeyDown("c") && PlayerState.ghostPlayable == PlayerState.GhostPlayable.Yes)
         {
             gameObject.SetActive(false);
             playerCon.enable();

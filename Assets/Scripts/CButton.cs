@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class CButton : MonoBehaviour {
 
-    public bool ghostIsPlayable;
     public GameObject ghostCButton;
     public GameObject peasantCButton;
 
 	// Use this for initialization
 	void Start () {
-        ghostCButton.SetActive(ghostIsPlayable);
-        peasantCButton.SetActive(!ghostCButton.activeSelf && ghostIsPlayable);
+     
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown("c"))
-        {
-            if(ghostCButton.activeSelf && ghostIsPlayable)
+            if (Input.GetKeyDown("c"))
             {
-                ghostCButton.SetActive(false);
-                peasantCButton.SetActive(true);
-            }
-            else if (peasantCButton.activeSelf && ghostIsPlayable)
-            {
-                ghostCButton.SetActive(true);
-                peasantCButton.SetActive(false);
-            }
+                if(ghostCButton.activeSelf && PlayerState.ghostPlayable == PlayerState.GhostPlayable.Yes)
+                {
+                    ghostCButton.SetActive(false);
+                    peasantCButton.SetActive(true);
+                }
+                else if (peasantCButton.activeSelf && PlayerState.ghostPlayable == PlayerState.GhostPlayable.Yes)
+                {
+                    ghostCButton.SetActive(true);
+                    peasantCButton.SetActive(false);
+                }
 
         }
 	}
