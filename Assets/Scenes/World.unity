@@ -13430,21 +13430,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 49
       objectReference: {fileID: 0}
-    - target: {fileID: 212560296004821510, guid: 65092bc90d59e9640a9df3e619ab851b,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.6313726
-      objectReference: {fileID: 0}
-    - target: {fileID: 212560296004821510, guid: 65092bc90d59e9640a9df3e619ab851b,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.54509807
-      objectReference: {fileID: 0}
-    - target: {fileID: 212560296004821510, guid: 65092bc90d59e9640a9df3e619ab851b,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.54509807
-      objectReference: {fileID: 0}
     - target: {fileID: 1410253014812276, guid: 65092bc90d59e9640a9df3e619ab851b, type: 2}
       propertyPath: m_Name
       value: dungeon_wall_down (24)
@@ -25027,17 +25012,35 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.12159729, y: 0.047660828}
+    - - {x: 0.20028687, y: 0.04840851}
+      - {x: 0.12159729, y: 0.047660828}
       - {x: -0.10128784, y: 0.047660828}
-      - {x: -0.26730347, y: 0.03843689}
-      - {x: -0.26127625, y: -0.26096344}
+      - {x: -0.2271576, y: 0.04450226}
+      - {x: -0.2543335, y: 0.034111023}
+      - {x: -0.26457214, y: 0.014823914}
+      - {x: -0.26127625, y: -0.26312256}
       - {x: -0.19961548, y: -0.34326935}
-      - {x: -0.07606506, y: -0.44161987}
-      - {x: 0.060272217, y: -0.44018555}
+      - {x: -0.11714172, y: -0.42217255}
+      - {x: -0.09353638, y: -0.43426514}
+      - {x: -0.06121826, y: -0.4394226}
+      - {x: -0.00944519, y: -0.4462738}
+      - {x: 0.029205322, y: -0.4421997}
+      - {x: 0.060272217, y: -0.43370056}
+      - {x: 0.082733154, y: -0.42770386}
+      - {x: 0.09605408, y: -0.42056274}
+      - {x: 0.1260376, y: -0.4028778}
+      - {x: 0.16130066, y: -0.37745667}
       - {x: 0.2026062, y: -0.33986664}
-      - {x: 0.25524902, y: -0.2752533}
-      - {x: 0.24319458, y: 0.062561035}
-      - {x: 0.21905518, y: 0.04446411}
+      - {x: 0.24876404, y: -0.2752533}
+      - {x: 0.2509308, y: -0.27093506}
+      - {x: 0.24659729, y: -0.27092743}
+      - {x: 0.24659729, y: -0.2666092}
+      - {x: 0.23794556, y: -0.27092743}
+      - {x: 0.2444458, y: -0.2666092}
+      - {x: 0.24227905, y: -0.27092743}
+      - {x: 0.25079346, y: -0.27126312}
+      - {x: 0.24319458, y: 0.0128479}
+      - {x: 0.22769165, y: 0.042304993}
 --- !u!50 &668464195
 Rigidbody2D:
   serializedVersion: 4
@@ -25123,7 +25126,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 668464192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.195, y: 12.185, z: 0}
+  m_LocalPosition: {x: 189.4, y: -114.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -34812,21 +34815,6 @@ Prefab:
     - target: {fileID: 4592551077889150, guid: 23280ebeab55b8d4d8ef4741028b8bd8, type: 2}
       propertyPath: m_RootOrder
       value: 147
-      objectReference: {fileID: 0}
-    - target: {fileID: 212210458948964112, guid: 23280ebeab55b8d4d8ef4741028b8bd8,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.6313726
-      objectReference: {fileID: 0}
-    - target: {fileID: 212210458948964112, guid: 23280ebeab55b8d4d8ef4741028b8bd8,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.54509807
-      objectReference: {fileID: 0}
-    - target: {fileID: 212210458948964112, guid: 23280ebeab55b8d4d8ef4741028b8bd8,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.54509807
       objectReference: {fileID: 0}
     - target: {fileID: 1432691646942304, guid: 23280ebeab55b8d4d8ef4741028b8bd8, type: 2}
       propertyPath: m_Name
