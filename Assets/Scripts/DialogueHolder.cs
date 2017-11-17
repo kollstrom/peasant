@@ -24,7 +24,11 @@ public class DialogueHolder : MonoBehaviour {
 	void Start () {
         spaceButtonImage.SetActive(false);
         sfxManager = FindObjectOfType<SoundEffectsManager>();
-        teleporterIntoDungeon.SetActive(false);
+        if (teleporterIntoDungeon != null)
+        {
+            teleporterIntoDungeon.SetActive(false);
+        }
+
 	}
 	
 	// Update is called once per frame
@@ -61,11 +65,7 @@ public class DialogueHolder : MonoBehaviour {
             else if (dialogue.name.Equals("HungryGuard") &&
                          PlayerState.lunchState == PlayerState.LunchState.PickedUp)
             {
-                // make Teleporter(into dungeon) active
-
-
                 teleporterIntoDungeon.SetActive(true);
-                print(teleporterIntoDungeon);
                 prisonTowerAnim.SetBool("isOpening", true);
                 sfxManager.openDoorSound.Play();
             }
