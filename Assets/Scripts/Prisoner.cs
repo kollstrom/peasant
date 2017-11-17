@@ -11,6 +11,7 @@ public class Prisoner : MonoBehaviour {
     public TeleportController teleportIn;
     public DialogueManager dialogManager;
     public SetGhostPlayble setGhostPlayable;
+    public Animator towerAnimator;
 
     private float step;
     private Vector3 firstPoint;
@@ -42,6 +43,7 @@ public class Prisoner : MonoBehaviour {
                 setGhostPlayable.gameObject.SetActive(true);
                 teleportOut.gameObject.SetActive(true);
                 teleportIn.gameObject.SetActive(false);
+                towerAnimator.SetBool("isOpening", false);
                 PlayerState.savedState = PlayerState.SavedState.Saved;
             }
             transform.position = Vector3.MoveTowards(transform.position, currentPoint, step);
