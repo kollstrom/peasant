@@ -7692,115 +7692,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4798341786191416, guid: 0732f5bb1768ae8499f8a55365669ea8,
     type: 2}
   m_PrefabInternal: {fileID: 250189221}
---- !u!1 &251059423
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 251059425}
-  - component: {fileID: 251059424}
-  m_Layer: 0
-  m_Name: open-castle-door
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &251059424
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 251059423}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a6f1eb5f2c2db4826bc916972a62bba6, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!4 &251059425
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 251059423}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.487581, y: 8.695167, z: -3.0054345}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 515745263}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &252404580
 Prefab:
   m_ObjectHideFlags: 0
@@ -9227,6 +9118,7 @@ GameObject:
   - component: {fileID: 286277403}
   - component: {fileID: 286277405}
   - component: {fileID: 286277404}
+  - component: {fileID: 286277406}
   m_Layer: 8
   m_Name: prison-tower
   m_TagString: Untagged
@@ -9327,7 +9219,7 @@ SpriteRenderer:
   m_SortingLayerID: -1942114365
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6bf7224f2584343719e2ea31c27b8411, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5699faf560da6493f8163381ad205c29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9337,6 +9229,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &286277406
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 286277402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58a58a92843e2410f94edd124d314eda, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &290326080
 Prefab:
   m_ObjectHideFlags: 0
@@ -16713,7 +16622,7 @@ MonoBehaviour:
   checkpointSound: {fileID: 1171702641}
   caughtByGuardSound: {fileID: 17594546}
   closeDoorSound: {fileID: 1423969281}
-  openDoorSound: {fileID: 251059424}
+  openDoorSound: {fileID: 1466162518}
 --- !u!4 &515745263
 Transform:
   m_ObjectHideFlags: 0
@@ -16732,7 +16641,7 @@ Transform:
   - {fileID: 1171702642}
   - {fileID: 1960455339}
   - {fileID: 1423969282}
-  - {fileID: 251059425}
+  - {fileID: 1466162519}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21616,6 +21525,8 @@ MonoBehaviour:
     - "TH' PROBLEM BE THAT ONE O' ME CREW HAS GONE MISSIN'. \u25BC"
     - "I WONDER WHA' TROUBLE HE HAS GOTTEN HISSELF INTO.\r"
     afterSentences: []
+  prisonTowerAnim: {fileID: 0}
+  teleporterIntoDungeon: {fileID: 0}
 --- !u!61 &666863210
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29413,6 +29324,8 @@ MonoBehaviour:
     - "THERE WAS A FIGHT HERE LAST NIGHT! \u25BC"
     - 'ONE OF THE PIRATES WAS TAKEN AWAY BY ONE OF THE PRISON GUARDS. '
     afterSentences: []
+  prisonTowerAnim: {fileID: 0}
+  teleporterIntoDungeon: {fileID: 0}
 --- !u!61 &944892798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32347,6 +32260,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4939177268043550, guid: 2bbacc082cc56a946be581f80413f93e,
     type: 2}
   m_PrefabInternal: {fileID: 1024945001}
+--- !u!1 &1025971022 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1378080240303628, guid: 72811e7c6fd9fe64d81f6930350b6dc4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2122187119}
 --- !u!1001 &1029155700
 Prefab:
   m_ObjectHideFlags: 0
@@ -34589,6 +34507,8 @@ MonoBehaviour:
     - SHOO! GET AWAY!
     afterSentences:
     - YOU BROUGHT ME MY LUNCH? THANKS!
+  prisonTowerAnim: {fileID: 286277406}
+  teleporterIntoDungeon: {fileID: 1025971022}
 --- !u!61 &1105953316
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44877,6 +44797,115 @@ Transform:
   m_PrefabParentObject: {fileID: 4411244724111366, guid: 65092bc90d59e9640a9df3e619ab851b,
     type: 2}
   m_PrefabInternal: {fileID: 1461539310}
+--- !u!1 &1466162517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1466162519}
+  - component: {fileID: 1466162518}
+  m_Layer: 0
+  m_Name: open-castle-door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1466162518
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466162517}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 119ff77bc7c0547f5907c8e766258ce5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!4 &1466162519
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466162517}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -14.487581, y: 8.695167, z: -3.0054345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 515745263}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1471197558
 Prefab:
   m_ObjectHideFlags: 0
@@ -51960,6 +51989,8 @@ MonoBehaviour:
     - "BUT I HEAR THAT SOME OF THEM ARE OF THE SUPERSTITIOUS TYPE. \u25BC"
     - AFRAID OF SPOOKY STUFF!
     afterSentences: []
+  prisonTowerAnim: {fileID: 0}
+  teleporterIntoDungeon: {fileID: 0}
 --- !u!61 &1674373274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62913,7 +62944,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2005148791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.69, y: 11.41, z: 0}
+  m_LocalPosition: {x: 14.17, y: -5.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63306,6 +63337,8 @@ MonoBehaviour:
     - "[OBTAINED THE GUARD\u2019S LUNCH]\r\n"
     afterSentences:
     - HURRY UP AND BRING HIM HIS LUNCH!
+  prisonTowerAnim: {fileID: 0}
+  teleporterIntoDungeon: {fileID: 0}
 --- !u!61 &2018110427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67669,6 +67702,10 @@ Prefab:
     - target: {fileID: 1378080240303628, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
       propertyPath: m_Name
       value: Teleporter(into dungeon)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378080240303628, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72811e7c6fd9fe64d81f6930350b6dc4, type: 2}
