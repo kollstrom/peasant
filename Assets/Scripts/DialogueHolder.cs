@@ -17,9 +17,14 @@ public class DialogueHolder : MonoBehaviour {
 
     private bool isGhost = false;
 
+    public Animator prisonTowerAnim;
+
+    public GameObject teleporterIntoDungeon;
+
 	void Start () {
         spaceButtonImage.SetActive(false);
         sfxManager = FindObjectOfType<SoundEffectsManager>();
+        teleporterIntoDungeon.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -56,7 +61,12 @@ public class DialogueHolder : MonoBehaviour {
             else if (dialogue.name.Equals("HungryGuard") &&
                          PlayerState.lunchState == PlayerState.LunchState.PickedUp)
             {
-                // Trigger opening castle door animation
+                // make Teleporter(into dungeon) active
+
+
+                teleporterIntoDungeon.SetActive(true);
+                print(teleporterIntoDungeon);
+                prisonTowerAnim.SetBool("isOpening", true);
                 sfxManager.openDoorSound.Play();
             }
         }
