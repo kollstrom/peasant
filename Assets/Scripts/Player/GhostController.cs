@@ -58,8 +58,8 @@ public class GhostController : MonoBehaviour
 
     private void moveplayer()
     {
-        float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
+        float inputX = Input.GetAxisRaw("Horizontal");
 
         if (Mathf.Abs(inputX) > 0.5f)
         {
@@ -74,8 +74,11 @@ public class GhostController : MonoBehaviour
             myRigidbody.velocity = new Vector2(0f, 0f);
         }
 
-        anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
-        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        if (anim.isActiveAndEnabled)
+        {
+            anim.SetFloat("MoveY", inputY);
+            anim.SetFloat("MoveX", inputX);
+        }
     }
 
 

@@ -33,7 +33,7 @@ public class DialogueHolder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKeyDown("c"))
+        if(Input.GetKeyDown("c") && PlayerState.ghostPlayable == PlayerState.GhostPlayable.Yes)
         {
             spaceButtonImage.SetActive(false);
             if (isGhost)
