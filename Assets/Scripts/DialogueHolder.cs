@@ -53,13 +53,19 @@ public class DialogueHolder : MonoBehaviour {
             if (!isFinished)
             {
                 if (!(dialogue.name.Equals("GuardMother") 
-                     && diaMan.SentencesCount() == 0))
+                     && diaMan.SentencesCount() == 0) &&
+                    !(dialogue.name.Equals("Prisoner")
+                       && diaMan.SentencesCount() == 0))
                 {
                     sfxManager.nextSound.Play();
                 }
                 else if  (dialogue.name.Equals("GuardMother"))
                 {
                     sfxManager.obtainedLunchSound.Play();
+                }
+                else if (dialogue.name.Equals("Prisoner"))
+                {
+                    sfxManager.celebrationSound.Play();
                 }
             }
             else if (dialogue.name.Equals("HungryGuard") &&

@@ -21,6 +21,8 @@ public class SoundEffectsManager : MonoBehaviour {
     public AudioSource closeDoorSound;
     public AudioSource openDoorSound;
 
+    public AudioSource celebrationSound;
+
 	// Use this for initialization
 	void Start () {
 		
