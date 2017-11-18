@@ -39,6 +39,7 @@ public class CatchPlayer : MonoBehaviour {
                 FindObjectOfType<PlayerController>().caughtByGuard();
                 startCatchTimer = false;
                 timer = 0;
+
             }
         }
 
@@ -55,14 +56,18 @@ public class CatchPlayer : MonoBehaviour {
         if (collision.gameObject.tag == "Player" && PlayerState.canCatch == PlayerState.GuardCanCatch.Yes)
         {
             sfxManager.heySound.Play();
+            StartCoroutine(PlayFailSound());
             guardCont.catchingPlayer(transform.parent.gameObject);
             FindObjectOfType<CameraController>().setCameraToGameObject(transform.parent.gameObject);
             collision.GetComponent<PlayerController>().disable();
             startCatchTimer = true;
             PlayerState.canCatch = PlayerState.GuardCanCatch.No;
-
-
         }
+    }
 
+    private IEnumerator PlayFailSound ()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        sfxManager.caughtByGuardSound.Play();
     }
 }
