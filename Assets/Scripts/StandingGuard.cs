@@ -22,6 +22,8 @@ public class StandingGuard : MonoBehaviour
     private SpriteRenderer spriteR;
     private Sprite[] sprites;
     private CatchPlayer ChildCatchPlayer;
+    private GameObject ChildScareIcon;
+    private GameObject ChildCatchIcon;
 
     private Vector3 startPoint;
     [HideInInspector]
@@ -37,6 +39,11 @@ public class StandingGuard : MonoBehaviour
     private Animator anim;
     private float lastX;
     private float lastY;
+    private float turnValue;
+    private float scareTurnValue;
+
+    [HideInInspector]
+    public bool catchingPlayer;
 
 
     void Start()
@@ -58,23 +65,38 @@ public class StandingGuard : MonoBehaviour
         sprites = Resources.LoadAll<Sprite>("guard");
 
         ChildCatchPlayer = this.gameObject.transform.GetChild(0).GetComponent<CatchPlayer>();
+        ChildScareIcon = this.gameObject.transform.GetChild(2).gameObject;
+        ChildCatchIcon = this.gameObject.transform.GetChild(3).gameObject;
+
+        turnValue = moveSpeed / 100;
+        scareTurnValue = scareMoveSpeed / 80;
+        catchingPlayer = false; 
     }
 
     void Update()
     {
-        switch (state)
+        if (!catchingPlayer)
         {
-            case GuardState.Standing:
-                standWatch();
-                break;
-            case GuardState.Scared:
-                move();
-                break;
-            case GuardState.BackFromWall:
-                backToStanding();
-                move();
-                break;
+            switch (state)
+            {
+                case GuardState.Standing:
+                    standWatch();
+                    break;
+                case GuardState.Scared:
+                    move(scareTurnValue);
+                    break;
+                case GuardState.BackFromWall:
+                    backToStanding();
+                    move(turnValue);
+                    break;
+            }
         }
+        else
+        {
+            ChildCatchIcon.SetActive(true);
+            anim.enabled = false;
+        }
+        
         
     }
 
@@ -83,6 +105,10 @@ public class StandingGuard : MonoBehaviour
         transform.position = startPoint;
         myRigidbody.velocity = new Vector2(0f, 0f);
         state = GuardState.Standing;
+        ChildScareIcon.SetActive(false);
+        standWatch();
+        catchingPlayer = false;
+        ChildCatchIcon.SetActive(false);
     }
 
     private void standWatch()
@@ -109,7 +135,7 @@ public class StandingGuard : MonoBehaviour
         }
     }
 
-    private void move()
+    private void move(float turnValue)
     {
         float currentX = transform.position.x;
         float currentY = transform.position.y;
@@ -117,13 +143,13 @@ public class StandingGuard : MonoBehaviour
         float y;
         float xDiff = lastX - currentX;
         float yDiff = lastY - currentY;
-        if (xDiff > moveSpeed / 100)
+        if (xDiff > turnValue)
         {
             // moving left
             x = -1f;
             ChildCatchPlayer.turn(270);
         }
-        else if (xDiff < -moveSpeed / 100)
+        else if (xDiff < -turnValue)
         {
             // moving right
             x = 1f;
@@ -134,13 +160,13 @@ public class StandingGuard : MonoBehaviour
             // not moving horizontally
             x = 0f;
         }
-        if (yDiff > moveSpeed / 100)
+        if (yDiff > turnValue)
         {
             // moving down
             y = -1f;
             ChildCatchPlayer.turn(0);
         }
-        else if (yDiff < -moveSpeed / 100)
+        else if (yDiff < -turnValue)
         {
             // moving up
             y = 1f;
@@ -159,6 +185,7 @@ public class StandingGuard : MonoBehaviour
 
     private void backToStanding()
     {
+        ChildScareIcon.SetActive(false);
         float step = moveSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, startPoint, step);
         if (transform.position == startPoint)
@@ -170,6 +197,7 @@ public class StandingGuard : MonoBehaviour
 
     public void scared(Vector2 v)
     {
+        ChildScareIcon.SetActive(true);
         anim.enabled = true;
         state = GuardState.Scared;
         float x = transform.position.x - v.x;

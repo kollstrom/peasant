@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4592551077889150}
   - component: {fileID: 212210458948964112}
-  - component: {fileID: 61761744419351088}
+  - component: {fileID: 60374265677820232}
   m_Layer: 13
   m_Name: dungeon_wall_right
   m_TagString: Untagged
@@ -35,14 +35,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1432691646942304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36, y: 21, z: 0.171875}
+  m_LocalPosition: {x: -137.5, y: 162, z: 0.171875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61761744419351088
-BoxCollider2D:
+--- !u!60 &60374265677820232
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -53,7 +53,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.40322113, y: -0.0040664673}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -63,9 +63,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.17729187, y: 0.99186707}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.46372986, y: 0.49853516}
+      - {x: -0.48591614, y: 0.47375488}
+      - {x: -0.49909973, y: 0.43197632}
+      - {x: -0.4980011, y: -0.43946838}
+      - {x: -0.47581482, y: -0.46772766}
+      - {x: -0.44960022, y: -0.49395752}
+      - {x: -0.44352722, y: -0.49597168}
+      - {x: -0.30485535, y: -0.49577332}
+      - {x: -0.3028412, y: -0.5038452}
+      - {x: -0.30671692, y: -0.49232483}
+      - {x: -0.31053162, y: -0.4961548}
+      - {x: -0.31074524, y: 0.42797852}
+      - {x: -0.32621765, y: 0.47331238}
+      - {x: -0.3537445, y: 0.4998169}
 --- !u!212 &212210458948964112
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -99,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21302650, guid: 78b6a3e66e76a534fa6ee6ded03fc247, type: 3}
   m_Color: {r: 0.6313726, g: 0.54509807, b: 0.54509807, a: 1}
   m_FlipX: 0

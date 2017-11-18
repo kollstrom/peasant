@@ -15,6 +15,7 @@ public class GhostController : MonoBehaviour
     private SpriteRenderer sr;
     private float nonOpaqueTimeLeft;
     public float nonOpaqueTime;
+    //private CameraController cameraController;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class GhostController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         nonOpaqueTimeLeft = 0;
         sfxManager = FindObjectOfType<SoundEffectsManager>();
+        gameObject.SetActive(false);
     }
 
     void Update()
@@ -52,9 +54,10 @@ public class GhostController : MonoBehaviour
 
     public void enable(Vector3 pos)
     {
-        transform.position = pos;
-        gameObject.SetActive(true);
         PlayerState.state = PlayerState.playerState.Ghost;
+        gameObject.SetActive(true);
+        transform.position = pos;
+        FindObjectOfType<CameraController>().setCameraToGameObject(this.gameObject);
     }
 
     private void moveplayer()

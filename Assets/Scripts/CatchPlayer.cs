@@ -7,12 +7,17 @@ public class CatchPlayer : MonoBehaviour {
     private GuardContainer guardCont;
     private BoxCollider2D box2d;
     public LayerMask layermask;
+    private bool startCatchTimer;
+    private float timer;
+    private SoundEffectsManager sfxManager;
 
     // Use this for initialization
     void Start () {
         guardCont = transform.parent.parent.gameObject.GetComponent<GuardContainer>();
         box2d = transform.gameObject.GetComponent<BoxCollider2D>();
-}
+        startCatchTimer = false;
+        sfxManager = FindObjectOfType<SoundEffectsManager>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,6 +28,20 @@ public class CatchPlayer : MonoBehaviour {
             box2d.offset = new Vector2(box2d.offset.x, -hit.distance/2);
             box2d.size = new Vector2(box2d.size.x, hit.distance);
         }
+
+        if (startCatchTimer)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 2 )
+            {
+                sfxManager.caughtByGuardSound.Play();
+                guardCont.resetChildren();
+                FindObjectOfType<PlayerController>().caughtByGuard();
+                startCatchTimer = false;
+                timer = 0;
+            }
+        }
+
     }
 
 
@@ -35,8 +54,12 @@ public class CatchPlayer : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.GetComponent<PlayerController>().caughtByGuard();
-            guardCont.resetChildren();
+            sfxManager.heySound.Play();
+            /*guardCont.catchingPlayer(transform.parent.gameObject);
+            FindObjectOfType<CameraController>().setCameraToGameObject(transform.parent.gameObject);
+            collision.GetComponent<PlayerController>().disable();
+            startCatchTimer = true; */
+            
         }
 
     }

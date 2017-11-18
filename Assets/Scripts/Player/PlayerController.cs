@@ -15,13 +15,13 @@ public class PlayerController : MonoBehaviour {
     private Vector2 lastMove;
 
     private SoundEffectsManager sfxManager;
+    //private CameraController cameraController;
 
 	void Start () {
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         sfxManager = FindObjectOfType<SoundEffectsManager>();
-
-    }
+}
 	
 	void Update () {
         if (Input.GetKeyDown("c") && PlayerState.ghostPlayable == PlayerState.GhostPlayable.Yes)
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour {
 
     public void enable()
     {
+        FindObjectOfType<CameraController>().setCameraToGameObject(this.gameObject);
         PlayerState.state = PlayerState.playerState.Player;
         GetComponent<Animator>().enabled = true;
         myRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -82,8 +83,8 @@ public class PlayerController : MonoBehaviour {
 
     public void caughtByGuard()
     {
-        sfxManager.caughtByGuardSound.Play();
         transform.position = respawnPosition;
+        enable();
     }
 
     

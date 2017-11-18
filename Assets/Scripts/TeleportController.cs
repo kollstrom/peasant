@@ -12,7 +12,7 @@ public class TeleportController : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             collision.transform.position = teleportPosition;
-            camController.setCameraPosition(teleportPosition);
+            camController.setCameraPositionToVector(teleportPosition);
             collision.GetComponent<PlayerController>().respawnPosition = transform.position - new Vector3(0, 1, 0);
         }
     }
