@@ -10,8 +10,6 @@ public class GhostController : MonoBehaviour
     private Animator anim;
     private Rigidbody2D myRigidbody;
 
-    private SoundEffectsManager sfxManager;
-
     private SpriteRenderer sr;
     private float nonOpaqueTimeLeft;
     public float nonOpaqueTime;
@@ -22,7 +20,6 @@ public class GhostController : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         nonOpaqueTimeLeft = 0;
-        sfxManager = FindObjectOfType<SoundEffectsManager>();
     }
 
     void Update()
