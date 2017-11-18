@@ -84,7 +84,6 @@ public class PlayerController : MonoBehaviour {
     {
         transform.position = respawnPosition;
         enable();
-        sfxManager.caughtByGuardSound.Play();
     }
 
     
