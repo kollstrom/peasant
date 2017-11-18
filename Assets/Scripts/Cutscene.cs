@@ -13,6 +13,8 @@ public class Cutscene : MonoBehaviour
     void Start()
     {
         dialogueHolder = gameObject.GetComponentInChildren<DialogueHolder>();
+        sr = GetComponent<SpriteRenderer>();
+        sr.color = new Color(1f, 1f, 1f, .5f);
     }
 
     void Update()
