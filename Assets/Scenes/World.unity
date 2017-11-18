@@ -20515,7 +20515,10 @@ MonoBehaviour:
     sentences:
     - "WOW, THANKS FOR GETTING ME OUT OF HERE! \u25BC"
     - "MY CAPTAIN IS PROBABLY FURIOUS WITH ME BEING GONE FOR THE NIGHT. \u25BC"
-    - "BETTER GET BACK TO THE SHIP. \r\n"
+    - "BETTER GET BACK TO THE SHIP. \r\u25BC\n"
+    - '[SAVED THE PIRATE PRISONER!]
+
+'
     afterSentences: []
   prisonTowerAnim: {fileID: 0}
   teleporterIntoDungeon: {fileID: 0}
