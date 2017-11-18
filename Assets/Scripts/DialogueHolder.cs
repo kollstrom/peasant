@@ -12,6 +12,23 @@ public class DialogueHolder : MonoBehaviour {
     private SoundEffectsManager sfxManager;
 
     private bool isFinished = true;
+    private bool hasStarted = false;
+
+    public bool HasStarted
+    {
+        get
+        {
+            return hasStarted;
+        }
+    }
+
+    public bool IsFinished
+    {
+        get
+        {
+            return isFinished;
+        }
+    }
 
     private bool isWithinReach = false;
 
@@ -113,6 +130,7 @@ public class DialogueHolder : MonoBehaviour {
 
     public void TriggerDialogue()
     {
+        hasStarted = true;
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 }
