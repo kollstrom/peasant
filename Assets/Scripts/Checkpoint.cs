@@ -5,8 +5,8 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour {
 
     private SoundEffectsManager sfxManager;
-
     private bool visitedBefore = false;
+    public Animator torchAnimator;
 
     private void Start()
     {
@@ -20,9 +20,16 @@ public class Checkpoint : MonoBehaviour {
             if (!visitedBefore)
             {
                 sfxManager.checkpointSound.Play();
+                StartCoroutine(SetTorchAblaze());
             }
             visitedBefore = true;
             collision.GetComponent<PlayerController>().respawnPosition = collision.GetComponent<PlayerController>().transform.position;
         }
+    }
+
+    IEnumerator SetTorchAblaze()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        torchAnimator.SetBool("isAblaze", true);
     }
 }
