@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour {
     private Vector2 lastMove;
 
     private SoundEffectsManager sfxManager;
-    //private CameraController cameraController;
 
 	void Start () {
         anim = GetComponent<Animator>();
@@ -85,6 +84,7 @@ public class PlayerController : MonoBehaviour {
     {
         transform.position = respawnPosition;
         enable();
+        sfxManager.caughtByGuardSound.Play();
     }
 
     

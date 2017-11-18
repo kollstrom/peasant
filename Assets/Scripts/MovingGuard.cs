@@ -115,6 +115,7 @@ public class MovingGuard : MonoBehaviour
         ChildCatchIcon.SetActive(false);
         catchingPlayer = false;
         anim.enabled = true;
+        PlayerState.canCatch = PlayerState.GuardCanCatch.Yes;
     }
 
     private void move(float turnValue)

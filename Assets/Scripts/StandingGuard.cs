@@ -109,6 +109,7 @@ public class StandingGuard : MonoBehaviour
         standWatch();
         catchingPlayer = false;
         ChildCatchIcon.SetActive(false);
+        PlayerState.canCatch = PlayerState.GuardCanCatch.Yes;
     }
 
     private void standWatch()

@@ -120,5 +120,6 @@ public class RotatingGuard : MonoBehaviour {
         timeSinceLastRotation = 0;
         catchingPlayer = false;
         ChildCatchIcon.SetActive(false);
+        PlayerState.canCatch = PlayerState.GuardCanCatch.Yes;
     }
 }

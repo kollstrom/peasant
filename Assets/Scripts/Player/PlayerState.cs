@@ -31,4 +31,11 @@ public class PlayerState : MonoBehaviour {
     }
 
     public static GhostPlayable ghostPlayable = GhostPlayable.No;
+
+    public enum GuardCanCatch
+    {
+        Yes, No
+    }
+
+    public static GuardCanCatch canCatch = GuardCanCatch.Yes;
 }
