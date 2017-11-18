@@ -47,6 +47,7 @@ public class ScaredByGhost : MonoBehaviour {
                 {
                     ghostInTrigger = false;
                     spaceButtonImage.SetActive(false);
+                    sfxManager.ghostSound.Play();
                     parentScriptStandingGuard.scared(ghostPosition);
                 }
                 break;
