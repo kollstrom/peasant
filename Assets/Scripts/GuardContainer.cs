@@ -15,7 +15,28 @@ public class GuardContainer : MonoBehaviour {
             {
                 child.gameObject.GetComponent<RotatingGuard>().resetGuard();
             }
-            
+            else if (child.tag == "StandingGuard")
+            {
+                child.gameObject.GetComponent<StandingGuard>().resetGuard();
+            }
+
         }
+    }
+
+    public void catchingPlayer(GameObject go)
+    {
+        if (go.tag == "MovingGuard")
+        {
+            go.GetComponent<MovingGuard>().catchingPlayer = true;
+        }
+        else if (go.tag == "RotatingGuard")
+        {
+            go.GetComponent<RotatingGuard>().catchingPlayer = true;
+        }
+        else if (go.tag == "StandingGuard")
+        {
+            go.GetComponent<StandingGuard>().catchingPlayer = true;
+        }
+
     }
 }

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4206033390608692}
   - component: {fileID: 212593230181723756}
-  - component: {fileID: 61033812562752300}
+  - component: {fileID: 60163632317611494}
   m_Layer: 13
   m_Name: dungeon_wall_left
   m_TagString: Untagged
@@ -35,14 +35,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751495988418626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33, y: 21, z: 0.171875}
+  m_LocalPosition: {x: -130.5, y: 162, z: 0.171875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61033812562752300
-BoxCollider2D:
+--- !u!60 &60163632317611494
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -53,7 +53,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.3869362, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -63,9 +63,19 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.19356537, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.47151184, y: 0.5005646}
+      - {x: 0.32832336, y: 0.49917603}
+      - {x: 0.316391, y: 0.48736572}
+      - {x: 0.31193542, y: 0.47943115}
+      - {x: 0.30741882, y: 0.43022156}
+      - {x: 0.31105042, y: -0.5}
+      - {x: 0.45570374, y: -0.4986267}
+      - {x: 0.48414612, y: -0.48020935}
+      - {x: 0.500412, y: -0.4532318}
+      - {x: 0.49925232, y: 0.45780945}
+      - {x: 0.49205017, y: 0.4867859}
 --- !u!212 &212593230181723756
 SpriteRenderer:
   m_ObjectHideFlags: 1

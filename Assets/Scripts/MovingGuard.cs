@@ -18,6 +18,8 @@ public class MovingGuard : MonoBehaviour
     private SpriteRenderer spriteR;
     private Sprite[] sprites;
     private CatchPlayer ChildCatchPlayer;
+    private GameObject ChildScareIcon;
+    private GameObject ChildCatchIcon;
 
     private Vector3 startPoint;
     private Vector3 currentPoint;
@@ -36,6 +38,11 @@ public class MovingGuard : MonoBehaviour
     private Animator anim;
     private float lastX;
     private float lastY;
+    private float turnValue;
+    private float scareTurnValue;
+
+    [HideInInspector]
+    public bool catchingPlayer;
 
 
     void Start()
@@ -54,7 +61,12 @@ public class MovingGuard : MonoBehaviour
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("guard");
         ChildCatchPlayer = this.gameObject.transform.GetChild(0).GetComponent<CatchPlayer>();
+        ChildScareIcon = this.gameObject.transform.GetChild(2).gameObject;
+        ChildCatchIcon = this.gameObject.transform.GetChild(3).gameObject;
         endPoint = new Vector3(startPoint.x + target.x, startPoint.y + target.y, startPoint.z + target.z);
+        turnValue = moveSpeed / 100;
+        scareTurnValue = scareMoveSpeed / 80;
+        catchingPlayer = false;
     }
 
     void Update()
@@ -67,7 +79,30 @@ public class MovingGuard : MonoBehaviour
         {
             currentPoint = endPoint;
         }
-        move();
+        if (!catchingPlayer)
+        {
+            switch (state)
+            {
+                case GuardState.Patrolling:
+                    patroll();
+                    move(turnValue);
+                    break;
+                case GuardState.Scared:
+                    move(scareTurnValue);
+                    break;
+                case GuardState.BackFromWall:
+                    backToPatroll();
+                    move(turnValue);
+                    break;
+            }
+        }
+        else
+        {
+            ChildCatchIcon.SetActive(true);
+            anim.enabled = false;
+        }
+      
+        
     }
 
     public void resetGuard()
@@ -76,35 +111,28 @@ public class MovingGuard : MonoBehaviour
         currentPoint = endPoint;
         myRigidbody.velocity = new Vector2(0f, 0f);
         state = GuardState.Patrolling;
+        ChildScareIcon.SetActive(false);
+        ChildCatchIcon.SetActive(false);
+        catchingPlayer = false;
+        anim.enabled = true;
+        PlayerState.canCatch = PlayerState.GuardCanCatch.Yes;
     }
 
-    private void move()
+    private void move(float turnValue)
     {
-        switch (state)
-        {
-            case GuardState.Patrolling:
-                patroll();
-                break;
-            case GuardState.Scared:
-                break;
-            case GuardState.BackFromWall:
-                backToPatroll();
-                break;
-        }
-
         float currentX = transform.position.x;
         float currentY = transform.position.y;
         float x;
         float y;
         float xDiff = lastX - currentX;
         float yDiff = lastY - currentY;
-        if (xDiff > moveSpeed / 100)
+        if (xDiff > turnValue)
         {
             // moving left
             x = -1f;
             ChildCatchPlayer.turn(270);
         }
-        else if (xDiff < -moveSpeed / 100)
+        else if (xDiff < -turnValue)
         {
             // moving right
             x = 1f;
@@ -115,13 +143,13 @@ public class MovingGuard : MonoBehaviour
             // not moving horizontally
             x = 0f;
         }
-        if (yDiff > moveSpeed / 100)
+        if (yDiff > turnValue)
         {
             // moving down
             y = -1f;
             ChildCatchPlayer.turn(0);
         }
-        else if (yDiff < -moveSpeed / 100)
+        else if (yDiff < -turnValue)
         {
             // moving up
             y = 1f;
@@ -148,6 +176,7 @@ public class MovingGuard : MonoBehaviour
 
     private void backToPatroll()
     {
+        ChildScareIcon.SetActive(false);
         float step = moveSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, lastScarePoint, step);
         if(transform.position == lastScarePoint)
@@ -159,6 +188,7 @@ public class MovingGuard : MonoBehaviour
 
     public void scared(Vector2 v)
     {
+        ChildScareIcon.SetActive(true);
         state = GuardState.Scared;
         float x = transform.position.x - v.x;
         float y = transform.position.y - v.y;

@@ -19,11 +19,15 @@ public class RotatingGuard : MonoBehaviour {
     private float timeSinceLastRotation;
     private int currentDirectionIndex;
     private CatchPlayer ChildCatchPlayer;
+    private GameObject ChildCatchIcon;
     private SpriteRenderer spriteR;
     private Sprite[] sprites;
     private List<string> directions = new List<string>();
 
     private const string up = "up", left = "left", down = "down", right = "right";
+
+    [HideInInspector]
+    public bool catchingPlayer;
 
     void Start () {
         if (directionUp) directions.Add(up);
@@ -32,22 +36,32 @@ public class RotatingGuard : MonoBehaviour {
         if (directionRight) directions.Add(right);
 
         ChildCatchPlayer = this.gameObject.transform.GetChild(0).GetComponent<CatchPlayer>();
+        ChildCatchIcon = this.gameObject.transform.GetChild(1).gameObject;
 
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("guard");
 
         currentDirectionIndex = getStartDirection();
         rotate(directions[currentDirectionIndex]);
+
+        catchingPlayer = false;
     }
 	
 	void Update () {
-        timeSinceLastRotation += Time.deltaTime;
-
-        if (timeSinceLastRotation >= timeBetweenRotation)
+        if (!catchingPlayer)
         {
-            currentDirectionIndex = (currentDirectionIndex + 1) % directions.Count;
-            rotate(directions[currentDirectionIndex]);
-            timeSinceLastRotation = 0;
+            timeSinceLastRotation += Time.deltaTime;
+
+            if (timeSinceLastRotation >= timeBetweenRotation)
+            {
+                currentDirectionIndex = (currentDirectionIndex + 1) % directions.Count;
+                rotate(directions[currentDirectionIndex]);
+                timeSinceLastRotation = 0;
+            }
+        }
+        else
+        {
+            ChildCatchIcon.SetActive(true);
         }
     }
 
@@ -104,5 +118,8 @@ public class RotatingGuard : MonoBehaviour {
         currentDirectionIndex = getStartDirection();
         rotate(directions[currentDirectionIndex]);
         timeSinceLastRotation = 0;
+        catchingPlayer = false;
+        ChildCatchIcon.SetActive(false);
+        PlayerState.canCatch = PlayerState.GuardCanCatch.Yes;
     }
 }

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4325877129727772}
   - component: {fileID: 212472693980706828}
-  - component: {fileID: 61442210618483638}
+  - component: {fileID: 60661847581170028}
   m_Layer: 13
   m_Name: dungeon_wall_up
   m_TagString: Untagged
@@ -35,14 +35,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1698440275910930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: -135.5, y: 165, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61442210618483638
-BoxCollider2D:
+--- !u!60 &60661847581170028
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -63,9 +63,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.42088318, y: 0.49795532}
+      - {x: -0.46958923, y: 0.45166016}
+      - {x: -0.49617004, y: 0.37187195}
+      - {x: -0.49797058, y: -0.38830566}
+      - {x: -0.47364807, y: -0.4634552}
+      - {x: -0.41474915, y: -0.49797058}
+      - {x: 0.42271423, y: -0.5}
+      - {x: 0.4756012, y: -0.46954346}
+      - {x: 0.49797058, y: -0.4167328}
+      - {x: 0.49467468, y: 0.35746765}
+      - {x: 0.4774933, y: 0.42332458}
+      - {x: 0.43052673, y: 0.47229004}
+      - {x: 0.36802673, y: 0.49736023}
 --- !u!212 &212472693980706828
 SpriteRenderer:
   m_ObjectHideFlags: 1
