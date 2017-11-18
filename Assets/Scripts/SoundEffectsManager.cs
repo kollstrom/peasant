@@ -23,6 +23,9 @@ public class SoundEffectsManager : MonoBehaviour {
 
     public AudioSource heySound;
 
+    public AudioSource celebrationSound;
+
+
 	// Use this for initialization
 	void Start () {
 		
