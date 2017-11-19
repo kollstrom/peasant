@@ -20,7 +20,11 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue (Dialogue dialogue)
     {
-        animator.SetBool("IsOpen", true);
+        if(animator != null)
+        {
+            animator.SetBool("IsOpen", true);
+
+        }
         sentences.Clear();
 
         string[] dialogueSentences = dialogue.sentences;
@@ -83,7 +87,11 @@ public class DialogueManager : MonoBehaviour {
 
     public void EndDialogue()
     {
-        animator.SetBool("IsOpen", false);
+        if (animator != null)
+        {
+            animator.SetBool("IsOpen", false);
+
+        }
         FindObjectOfType<PlayerController>().enable();
     }
 }
