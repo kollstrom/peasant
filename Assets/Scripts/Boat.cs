@@ -30,6 +30,10 @@ public class Boat : MonoBehaviour {
                 currentPoint = secondPoint;
                 FindObjectOfType<CameraController>().lerpToPosition(firstPoint);
             }
+            else if (transform.position == secondPoint)
+            {
+                FindObjectOfType<OutroTrigger>().showDialog(true);
+            }
             transform.position = Vector3.MoveTowards(transform.position, currentPoint, step);
         }
     }

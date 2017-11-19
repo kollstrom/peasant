@@ -11,6 +11,8 @@ public class DialogueHolder : MonoBehaviour {
 
     private SoundManager sfxManager;
 
+    public BoxCollider2D boatTrigger;
+
     private bool isFinished = true;
     private bool hasStarted = false;
 
@@ -91,6 +93,12 @@ public class DialogueHolder : MonoBehaviour {
                 teleporterIntoDungeon.SetActive(true);
                 prisonTowerAnim.SetBool("isOpening", true);
                 sfxManager.openDoorSound.Play();
+            }
+            else if (dialogue.name.Equals("Captain") &&
+                PlayerState.savedState == PlayerState.SavedState.Saved)
+            {
+                boatTrigger.enabled = true;
+                FindObjectOfType<Captain>().startWalking();
             }
         }
         else if (Input.GetKeyUp(KeyCode.Space) && isWithinReach)
