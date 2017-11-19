@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour {
 
-    private SoundEffectsManager sfxManager;
+    private SoundManager sfxManager;
     private bool visitedBefore = false;
     public Animator torchAnimator;
 
     private void Start()
     {
-        sfxManager = FindObjectOfType<SoundEffectsManager>();
+        sfxManager = FindObjectOfType<SoundManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

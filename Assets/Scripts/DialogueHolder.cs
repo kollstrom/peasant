@@ -9,7 +9,7 @@ public class DialogueHolder : MonoBehaviour {
 
     public Dialogue dialogue;
 
-    private SoundEffectsManager sfxManager;
+    private SoundManager sfxManager;
 
     private bool isFinished = true;
     private bool hasStarted = false;
@@ -40,7 +40,7 @@ public class DialogueHolder : MonoBehaviour {
 
 	void Start () {
         spaceButtonImage.SetActive(false);
-        sfxManager = FindObjectOfType<SoundEffectsManager>();
+        sfxManager = FindObjectOfType<SoundManager>();
         if (teleporterIntoDungeon != null)
         {
             teleporterIntoDungeon.SetActive(false);
