@@ -8,22 +8,45 @@ public class CameraController : MonoBehaviour {
     public GameObject ghost;
     public float moveSpeed;
 
-    private Vector3 targetPos;
     private GameObject following;
+    private Vector2 focusPosition;
+    [HideInInspector]
+    private bool shouldFollow;
 
     private void Start()
     {
+        shouldFollow = true;
         following = player;
     }
 
     void LateUpdate () {
-        targetPos = new Vector3(following.transform.position.x, following.transform.position.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, targetPos, moveSpeed * Time.deltaTime);
+        if (shouldFollow)
+        {
+            lerp(new Vector2(following.transform.position.x, following.transform.position.y));
+        }
+        else
+        {
+            lerp(focusPosition);
+        }
+        
 	}
+
+    private void lerp(Vector2 v2)
+    {
+        Vector3 targetPos = new Vector3(v2.x, v2.y, transform.position.z);
+        transform.position = Vector3.Lerp(transform.position, targetPos, moveSpeed * Time.deltaTime);
+    }
 
     public void setCameraPositionToVector(Vector2 v2)
     {
         transform.position = new Vector3(v2.x, v2.y, transform.position.z);
+    }
+
+    public void lerpToPosition(Vector2 v2)
+    {
+        shouldFollow = false;
+        focusPosition = v2;
+
     }
 
     public void setCameraToGameObject(GameObject go)
