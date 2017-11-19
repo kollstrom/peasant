@@ -10,14 +10,14 @@ public class ScaredByGhost : MonoBehaviour {
     private GameObject parent;
     private MovingGuard parentScriptMovingGuard;
     private StandingGuard parentScriptStandingGuard;
-    private SoundEffectsManager sfxManager;
+    private SoundManager sfxManager;
 
     // Use this for initialization
     void Start () {
         spaceButtonImage = GameObject.Find("/UI/MainCanvas/SpaceButton");
         spaceButtonImage.SetActive(false);
         parent = transform.parent.gameObject;
-        sfxManager = FindObjectOfType<SoundEffectsManager>();
+        sfxManager = FindObjectOfType<SoundManager>();
 
         if(parent.tag == "MovingGuard")
         {

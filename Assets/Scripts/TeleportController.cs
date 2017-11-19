@@ -14,6 +14,15 @@ public class TeleportController : MonoBehaviour {
             collision.transform.position = teleportPosition;
             camController.setCameraPositionToVector(teleportPosition);
             collision.GetComponent<PlayerController>().respawnPosition = transform.position - new Vector3(0, 1, 0);
+
+            if (gameObject.name =="Teleporter(into dungeon)")
+            {
+                SoundManager.location = SoundManager.Location.Inside;
+            }
+            else if (gameObject.name == "Teleporter (out of dungeon)")
+            {
+                SoundManager.location = SoundManager.Location.Outside;
+            }
         }
     }
 }

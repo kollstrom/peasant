@@ -9,14 +9,14 @@ public class CatchPlayer : MonoBehaviour {
     public LayerMask layermask;
     private bool startCatchTimer;
     private float timer;
-    private SoundEffectsManager sfxManager;
+    private SoundManager sfxManager;
 
     // Use this for initialization
     void Start () {
         guardCont = transform.parent.parent.gameObject.GetComponent<GuardContainer>();
         box2d = transform.gameObject.GetComponent<BoxCollider2D>();
         startCatchTimer = false;
-        sfxManager = FindObjectOfType<SoundEffectsManager>();
+        sfxManager = FindObjectOfType<SoundManager>();
         timer = 0;
     }
 	
