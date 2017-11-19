@@ -25201,7 +25201,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 668464192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.15, y: 12.53, z: 0}
+  m_LocalPosition: {x: 202.14, y: -120.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60402,9 +60402,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1598723678}
   - component: {fileID: 1598723683}
-  - component: {fileID: 1598723682}
   - component: {fileID: 1598723680}
   - component: {fileID: 1598723679}
+  - component: {fileID: 1598723681}
   m_Layer: 13
   m_Name: GhostCutscene
   m_TagString: Untagged
@@ -60480,7 +60480,7 @@ PolygonCollider2D:
       - {x: 0.29537964, y: -0.07728577}
       - {x: 0.24754333, y: -0.027938843}
       - {x: 0.10636902, y: -0.022972107}
---- !u!95 &1598723682
+--- !u!95 &1598723681
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -60489,7 +60489,7 @@ Animator:
   m_GameObject: {fileID: 1598723677}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3f002215229e746aabd3127d82c316dd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7f7044093ba3d442291099ce8e224971, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -60532,7 +60532,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300006, guid: 073b4fc2384474a58b0bd2625f05df52, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.597}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
