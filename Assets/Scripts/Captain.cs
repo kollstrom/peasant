@@ -6,6 +6,7 @@ public class Captain : MonoBehaviour {
 
     public float moveSpeed;
 
+    private Animator anim;
     private float step;
     private Vector3 firstPoint;
     private bool walkOnShip;
@@ -16,6 +17,7 @@ public class Captain : MonoBehaviour {
         walkOnShip = false;
         step = moveSpeed * Time.deltaTime;
         firstPoint = transform.position + new Vector3(1.7f, 0, 0);
+        anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -33,6 +35,7 @@ public class Captain : MonoBehaviour {
     public void startWalking()
     {
         walkOnShip = true;
+        anim.SetBool("isWalking", true);
     }
 
 }
