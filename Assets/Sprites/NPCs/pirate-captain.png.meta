@@ -1,25 +1,17 @@
 fileFormatVersion: 2
-guid: 1abedb5cf598f47d9bba7aa6a2910bc7
-timeCreated: 1511165244
+guid: 061e5a93b953c446b9db2d9dfd465eca
+timeCreated: 1511166566
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: pirate_0
-    21300002: pirate_1
-    21300004: pirate_2
-    21300006: pirate_3
+    21300000: stand_left
+    21300002: stand_right
+    21300004: walk_left_1
+    21300006: walk_right_1
     21300008: pirate_4
-    21300010: pirate_5
+    21300010: walk_right_2
     21300012: pirate_6
-    21300014: pirate_7
-    21300016: pirate_8
-    21300018: pirate_9
-    21300020: pirate_10
-    21300022: pirate_11
-    21300024: pirate_12
-    21300026: pirate_13
-    21300028: pirate_14
-    21300030: pirate_15
+    21300014: walk_right_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -73,7 +65,7 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -82,7 +74,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -91,7 +83,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: WebGL
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -103,12 +95,40 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pirate_0
+      name: stand_left
       rect:
         serializedVersion: 2
-        x: 8
-        y: 101
-        width: 17
+        x: 0
+        y: 71
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: stand_right
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 71
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: walk_left_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 47
+        width: 14
         height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -117,40 +137,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pirate_1
+      name: walk_right_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 101
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: pirate_2
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 101
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: pirate_3
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 101
-        width: 17
+        x: 18
+        y: 47
+        width: 14
         height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -162,10 +154,10 @@ TextureImporter:
       name: pirate_4
       rect:
         serializedVersion: 2
-        x: 7
-        y: 69
-        width: 17
-        height: 23
+        x: 0
+        y: 24
+        width: 14
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,12 +165,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pirate_5
+      name: walk_right_2
       rect:
         serializedVersion: 2
-        x: 40
-        y: 69
-        width: 17
+        x: 18
+        y: 24
+        width: 14
         height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -190,9 +182,9 @@ TextureImporter:
       name: pirate_6
       rect:
         serializedVersion: 2
-        x: 72
-        y: 69
-        width: 17
+        x: 0
+        y: 0
+        width: 14
         height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -201,124 +193,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pirate_7
+      name: walk_right_3
       rect:
         serializedVersion: 2
-        x: 102
-        y: 69
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: pirate_8
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 37
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: pirate_9
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 37
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: pirate_10
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 37
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: pirate_11
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 37
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: pirate_12
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 5
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: pirate_13
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 5
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: pirate_14
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 5
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: pirate_15
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 5
-        width: 17
+        x: 18
+        y: 0
+        width: 14
         height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
