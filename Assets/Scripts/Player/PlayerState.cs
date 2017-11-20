@@ -38,4 +38,11 @@ public class PlayerState : MonoBehaviour {
     }
 
     public static GuardCanCatch canCatch = GuardCanCatch.Yes;
+
+    public enum Catched
+    {
+        Yes, No
+    }
+
+    public static Catched catched = Catched.No;
 }
