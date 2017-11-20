@@ -16271,7 +16271,7 @@ GameObject:
   - component: {fileID: 402540578}
   - component: {fileID: 402540577}
   m_Layer: 0
-  m_Name: pirate-boat-no-recoloring
+  m_Name: pirate-boat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16381,7 +16381,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3238dc2eece9843b6b8bd905f7b54c18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 988bd41d6d28943928fc9cfb07bf97a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -48733,7 +48733,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1247448911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 574.8, y: 348.8, z: 0}
+  m_LocalPosition: {x: 897.8, y: 521.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1328182137}
@@ -67900,7 +67900,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.52, y: 3.36}
+    oldSize: {x: 5.28, y: 3.56}
     newSize: {x: 2.76, y: 1.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -67943,7 +67943,7 @@ SpriteRenderer:
   m_SortingLayerID: -1942114365
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a1627a9b6b5e04b7688bf8c3ff941dd1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aac749a9fbc1c46d689059f4c58096b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -80495,7 +80495,7 @@ SpriteRenderer:
   m_SortingLayerID: -1942114365
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a1627a9b6b5e04b7688bf8c3ff941dd1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aac749a9fbc1c46d689059f4c58096b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -80534,7 +80534,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.52, y: 3.36}
+    oldSize: {x: 5.28, y: 3.56}
     newSize: {x: 2.76, y: 1.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
