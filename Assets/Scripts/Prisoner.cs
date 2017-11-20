@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,10 @@ public class Prisoner : MonoBehaviour {
     public SetGhostPlayble setGhostPlayable;
     public Animator towerAnimator;
 
+    private Animator prisonerAnimator;
+    private bool hasStartedDownwards = false;
+    private bool hasStartedLeft = false;
+
     private float step;
     private Vector3 firstPoint;
     private Vector3 secondPoint;
@@ -25,15 +30,18 @@ public class Prisoner : MonoBehaviour {
         firstPoint = transform.position + new Vector3(0, -3, 0);
         secondPoint = firstPoint + new Vector3(-7, 0, 0);
         currentPoint = firstPoint;
+        prisonerAnimator = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
 	void Update () {
         if (escape == true)
         {
+            StartWalkingDownwards();
             FindObjectOfType<PlayerController>().disable();
             if (transform.position == firstPoint)
             {
+                StartWalkingLeft();
                 currentPoint = secondPoint;
             }
             else if (transform.position == secondPoint)
@@ -51,5 +59,19 @@ public class Prisoner : MonoBehaviour {
 
 	}
 
-    
+    private void StartWalkingLeft()
+    {
+        if (!hasStartedLeft)
+        {
+            prisonerAnimator.SetBool("isWalkingDownwards", false);
+        }
+    }
+
+    private void StartWalkingDownwards()
+    {
+        if (!hasStartedDownwards)
+        {
+            prisonerAnimator.SetBool("isWalkingDownwards", true);
+        }
+    }
 }
