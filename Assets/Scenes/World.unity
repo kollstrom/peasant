@@ -4246,6 +4246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 117925094}
   - component: {fileID: 117925093}
+  - component: {fileID: 117925095}
   m_Layer: 8
   m_Name: BarKeeper
   m_TagString: Untagged
@@ -4287,7 +4288,7 @@ SpriteRenderer:
   m_SortingLayerID: 253592955
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4434575dce8e3f548a337a5cd36ddb3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c314333e71b14bf9a52125969ccb085, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4311,6 +4312,31 @@ Transform:
   m_Father: {fileID: 1475703054}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &117925095
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117925092}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.76, y: 1.24}
+    newSize: {x: 0.75, y: 0.875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.76, y: 1.24}
+  m_EdgeRadius: 0
 --- !u!1001 &118067048
 Prefab:
   m_ObjectHideFlags: 0
@@ -18574,6 +18600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465203893}
   - component: {fileID: 465203892}
+  - component: {fileID: 465203894}
   m_Layer: 8
   m_Name: GuardMother
   m_TagString: Untagged
@@ -18615,7 +18642,7 @@ SpriteRenderer:
   m_SortingLayerID: 253592955
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4434575dce8e3f548a337a5cd36ddb3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66512e48db05d4ad9a3676c6d403f0bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18639,6 +18666,31 @@ Transform:
   m_Father: {fileID: 1475703054}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &465203894
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 465203891}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 1.08}
+    newSize: {x: 0.75, y: 0.875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 1.08}
+  m_EdgeRadius: 0
 --- !u!4 &467763529 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4939177268043550, guid: 2bbacc082cc56a946be581f80413f93e,
@@ -20045,6 +20097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 500520386}
   - component: {fileID: 500520385}
+  - component: {fileID: 500520387}
   m_Layer: 8
   m_Name: HungryGuard
   m_TagString: Untagged
@@ -20086,7 +20139,7 @@ SpriteRenderer:
   m_SortingLayerID: 253592955
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4434575dce8e3f548a337a5cd36ddb3d, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 08a393570bb544db1a9c6f970fd75ed4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20110,6 +20163,31 @@ Transform:
   m_Father: {fileID: 1475703054}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &500520387
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 500520384}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.88, y: 1.28}
+    newSize: {x: 0.75, y: 0.875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.88, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1001 &500680312
 Prefab:
   m_ObjectHideFlags: 0
@@ -26254,7 +26332,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 668464192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.14, y: -0.29, z: 0}
+  m_LocalPosition: {x: -27.13, y: 12.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40079,6 +40157,7 @@ GameObject:
   - component: {fileID: 1019170472}
   - component: {fileID: 1019170473}
   - component: {fileID: 1019170474}
+  - component: {fileID: 1019170475}
   m_Layer: 0
   m_Name: Prisoner
   m_TagString: Untagged
@@ -40134,7 +40213,7 @@ SpriteRenderer:
   m_SortingLayerID: 253592955
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4434575dce8e3f548a337a5cd36ddb3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e2bc8992ee3d414080d5ef2d7a0044c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -40162,6 +40241,23 @@ MonoBehaviour:
   dialogManager: {fileID: 767056646}
   setGhostPlayable: {fileID: 1267669682}
   towerAnimator: {fileID: 1877498197}
+--- !u!95 &1019170475
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1019170471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 948cb5ff877b342ccbfaa0dc4d024b39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1020392841
 Prefab:
   m_ObjectHideFlags: 0
@@ -41461,6 +41557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1071166684}
   - component: {fileID: 1071166683}
+  - component: {fileID: 1071166685}
   m_Layer: 0
   m_Name: Villager
   m_TagString: Untagged
@@ -41502,7 +41599,7 @@ SpriteRenderer:
   m_SortingLayerID: 253592955
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4434575dce8e3f548a337a5cd36ddb3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49a2ce40f56f44ef483af885d6483d43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -41526,6 +41623,31 @@ Transform:
   m_Father: {fileID: 1475703054}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1071166685
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071166682}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8, y: 1.16}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 1.16}
+  m_EdgeRadius: 0
 --- !u!1001 &1073542197
 Prefab:
   m_ObjectHideFlags: 0
@@ -47440,6 +47562,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1228406828}
   - component: {fileID: 1228406827}
+  - component: {fileID: 1228406829}
+  - component: {fileID: 1228406830}
   m_Layer: 0
   m_Name: Captain
   m_TagString: Untagged
@@ -47481,12 +47605,12 @@ SpriteRenderer:
   m_SortingLayerID: 253592955
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300006, guid: 4434575dce8e3f548a337a5cd36ddb3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 061e5a93b953c446b9db2d9dfd465eca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.56, y: 0.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -47505,6 +47629,48 @@ Transform:
   m_Father: {fileID: 1475703054}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1228406829
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1228406826}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b427050909f74472f9d556da9a256fff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!61 &1228406830
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1228406826}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.56, y: 0.88}
+    newSize: {x: 0.56, y: 0.92}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.56, y: 0.88}
+  m_EdgeRadius: 0
 --- !u!1001 &1228810644
 Prefab:
   m_ObjectHideFlags: 0
@@ -57847,7 +58013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475703054}
   m_Layer: 0
-  m_Name: NPC's
+  m_Name: NPCs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81034,12 +81200,12 @@ MonoBehaviour:
   dialogue:
     name: Captain
     sentences:
-    - "YEAH, I BE GOIN' T' TH' CAPITAL. \u25BC"
-    - "TH' PROBLEM BE THAT ONE O' ME CREW HAS GONE MISSIN'. \u25BC"
+    - "YEAH, I BE GOIN' TO THE CAPITAL. \u25BC"
+    - "THE PROBLEM BE THAT ONE O' ME CREW HAS GONE MISSIN'. \u25BC"
     - "I WONDER WHA' TROUBLE HE HAS GOTTEN HISSELF INTO.\r"
     afterSentences:
     - "YE SAVED ME CREWMATE! \u25BC"
-    - "O' COURSE I'LL LET YE ABOARD ME SHIP. WE BE LEAVIN' FER TH' CAPITAL TODAY.\r\n"
+    - "O' COURSE I'LL LET YE ABOARD ME SHIP. WE BE LEAVIN' FER THE CAPITAL TODAY.\r\n"
   prisonTowerAnim: {fileID: 0}
   teleporterIntoDungeon: {fileID: 0}
 --- !u!61 &2105756185
