@@ -170,7 +170,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.1941605, y: -1.016201}
+  m_Offset: {x: -0.0045394897, y: -1.016201}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -181,7 +181,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6170502, y: 0.60892487}
+  m_Size: {x: 2.3804169, y: 0.60892487}
   m_EdgeRadius: 0
 --- !u!61 &245396
 BoxCollider2D:
@@ -21711,7 +21711,7 @@ MonoBehaviour:
     sentences:
     - "WOW, THANKS FOR GETTING ME OUT OF HERE! \u25BC"
     - "MY CAPTAIN IS PROBABLY FURIOUS WITH ME BEING GONE FOR THE NIGHT. \u25BC"
-    - "BETTER GET BACK TO THE SHIP. \r\u25BC\n"
+    - "BETTER GET BACK TO THE SHIP. \r\n"
     afterSentences: []
   boatTrigger: {fileID: 0}
   prisonTowerAnim: {fileID: 1877498197}
@@ -21728,7 +21728,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.1886215, y: -1.0512505}
+  m_Offset: {x: 0.007156372, y: -1.0512505}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -21739,7 +21739,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6349945, y: 0.60337067}
+  m_Size: {x: 2.3978271, y: 0.60337067}
   m_EdgeRadius: 0
 --- !u!1001 &539693855
 Prefab:
@@ -48790,7 +48790,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1247448911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 897.8, y: 521.3, z: 0}
+  m_LocalPosition: {x: 436.8, y: 214.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1328182137}
@@ -81706,7 +81706,8 @@ MonoBehaviour:
     sentences:
     - "YEAH, I BE GOIN' TO THE CAPITAL. \u25BC"
     - "THE PROBLEM BE THAT ONE O' ME CREW HAS GONE MISSIN'. \u25BC"
-    - "I WONDER WHA' TROUBLE HE HAS GOTTEN HISSELF INTO.\r"
+    - "I WONDER WHA' TROUBLE HE HAS GOTTEN HISSELF INTO.\r \u25BC"
+    - IF YOU FIND HIM YOU CAN COME WITH US TO THE CAPITAL.
     afterSentences:
     - "YE SAVED ME CREWMATE! \u25BC"
     - "O' COURSE I'LL LET YE ABOARD ME SHIP. WE BE LEAVIN' FER THE CAPITAL TODAY.\r\n"
