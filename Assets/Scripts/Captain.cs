@@ -11,7 +11,6 @@ public class Captain : MonoBehaviour {
     private Vector3 firstPoint;
     private bool walkOnShip;
 
-
     void Start()
     {
         walkOnShip = false;

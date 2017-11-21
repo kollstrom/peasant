@@ -9,14 +9,9 @@ public class OutroTrigger : MonoBehaviour {
 
     private Animator[] animators;
 
-    private Text[] texts;
-
     void Start()
     {
         animators = GetComponentsInChildren<Animator>();
-        texts = GetComponentsInChildren<Text>();
-        print(texts);
-        print(animators.Length);
         animators[1].SetBool("fadeOut", true);
         animators[2].SetBool("fadeOut", true);
     }
@@ -25,7 +20,6 @@ public class OutroTrigger : MonoBehaviour {
     {
         animators[0].SetBool("show", b);
         animators[1].SetBool("fadeOut", false);
-        //texts[0].enabled = true;
         StartCoroutine(ShowTextTwo());
     }
 
@@ -37,8 +31,5 @@ public class OutroTrigger : MonoBehaviour {
         animators[2].SetBool("fadeOut", false);
         yield return new WaitForSecondsRealtime(5f);
         animators[2].SetBool("fadeOut", true);
-
-
-
     }
 }

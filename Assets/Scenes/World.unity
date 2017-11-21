@@ -16314,13 +16314,13 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: -0.56053734, y: -1.8744016}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3, y: 3.05}
-    newSize: {x: 1.44, y: 4.56}
+    newSize: {x: 3, y: 3.05}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -16340,6 +16340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  x1: 15
+  x2: 10
 --- !u!212 &402540580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16374,12 +16376,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 83c90da9e630a45ec9c619baad6f83c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9b0b274175b54ec2a315037af6aa808, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.44, y: 4.56}
+  m_Size: {x: 3, y: 3.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -33836,7 +33838,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 854228794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 69, y: 294, z: 0}
+  m_LocalPosition: {x: 277, y: 294, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1587805067}
@@ -33846,7 +33848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 69, y: 294}
+  m_AnchoredPosition: {x: 277, y: 294}
   m_SizeDelta: {x: 800, y: 272}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &854228796
