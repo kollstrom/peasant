@@ -12,11 +12,13 @@ public class CameraController : MonoBehaviour {
     private Vector2 focusPosition;
     [HideInInspector]
     private bool shouldFollow;
+    private GameObject lunch;
 
     private void Start()
     {
         shouldFollow = true;
         following = player;
+        lunch = transform.GetChild(0).gameObject;
     }
 
     void LateUpdate () {
@@ -52,5 +54,10 @@ public class CameraController : MonoBehaviour {
     public void setCameraToGameObject(GameObject go)
     {
         following = go;
+    }
+
+    public void showHideLunch(bool b)
+    {
+        lunch.SetActive(b);
     }
 }
