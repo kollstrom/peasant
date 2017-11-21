@@ -6,25 +6,29 @@ public class Boat : MonoBehaviour {
 
     public float moveSpeed;
 
-    private bool sailAvay;
+    private bool sailAway;
     private float step;
     private Vector3 firstPoint;
     private Vector3 secondPoint;
     private Vector3 currentPoint;
     private bool isShown = false;
 
+    public float x1;
+    public float x2;
+
     // Use this for initialization
     void Start () {
-        sailAvay = false;
+        sailAway = false;
         step = moveSpeed * Time.deltaTime;
-        firstPoint = transform.position + new Vector3(0, -25, 0);
-        secondPoint = firstPoint + new Vector3(0, -15, 0);
+        firstPoint = transform.position + new Vector3(x1, 0, 0);
+        secondPoint = firstPoint + new Vector3(x2, 0, 0);
         currentPoint = firstPoint;
+        print(secondPoint);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (sailAvay == true)
+        if (sailAway == true)
         {
             if (transform.position == firstPoint)
             {
@@ -47,7 +51,7 @@ public class Boat : MonoBehaviour {
             FindObjectOfType<PlayerController>().disable();
             FindObjectOfType<PlayerController>().gameObject.SetActive(false);
             FindObjectOfType<CameraController>().setCameraToGameObject(this.gameObject);
-            sailAvay = true;
+            sailAway = true;
         }
     }
 }
