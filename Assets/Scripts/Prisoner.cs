@@ -23,6 +23,8 @@ public class Prisoner : MonoBehaviour {
     private Vector3 secondPoint;
     private Vector3 currentPoint;
 
+    private bool fadeStarted = false;
+
     // Use this for initialization
     void Start () {
         escape = false;
@@ -39,6 +41,12 @@ public class Prisoner : MonoBehaviour {
         {
             StartWalkingDownwards();
             FindObjectOfType<PlayerController>().disable();
+            //print(transform.position);
+            if (transform.position.x <= secondPoint.x + 3.5f && !fadeStarted)
+            {
+                PlayerState.catched = PlayerState.Catched.Yes;
+                fadeStarted = true;
+            }
             if (transform.position == firstPoint)
             {
                 StartWalkingLeft();
@@ -72,6 +80,7 @@ public class Prisoner : MonoBehaviour {
         if (!hasStartedDownwards)
         {
             prisonerAnimator.SetBool("isWalkingDownwards", true);
+
         }
     }
 }

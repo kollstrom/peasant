@@ -69,5 +69,6 @@ public class CatchPlayer : MonoBehaviour {
     {
         yield return new WaitForSecondsRealtime(1);
         sfxManager.caughtByGuardSound.Play();
+        PlayerState.catched = PlayerState.Catched.Yes;
     }
 }

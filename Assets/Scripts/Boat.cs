@@ -11,6 +11,7 @@ public class Boat : MonoBehaviour {
     private Vector3 firstPoint;
     private Vector3 secondPoint;
     private Vector3 currentPoint;
+    private bool isShown = false;
 
     // Use this for initialization
     void Start () {
@@ -30,8 +31,9 @@ public class Boat : MonoBehaviour {
                 currentPoint = secondPoint;
                 FindObjectOfType<CameraController>().lerpToPosition(firstPoint);
             }
-            else if (transform.position == secondPoint)
+            else if (transform.position == secondPoint && !isShown)
             {
+                isShown = true;
                 FindObjectOfType<OutroTrigger>().showDialog(true);
             }
             transform.position = Vector3.MoveTowards(transform.position, currentPoint, step);
