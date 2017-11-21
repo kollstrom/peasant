@@ -28,7 +28,6 @@ public class Boat : MonoBehaviour {
         secondPoint = firstPoint + new Vector3(x2, 0, 0);
         thirdPoint = secondPoint + new Vector3(x3, 0, 0);
         currentPoint = firstPoint;
-        print(secondPoint);
     }
 	
 	// Update is called once per frame

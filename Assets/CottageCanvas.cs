@@ -20,7 +20,7 @@ public class CottageCanvas : MonoBehaviour {
         {
             animator.SetBool("show", true);
         }
-        if (timer >= 10)
+        if (timer >= 8)
         {
             animator.SetBool("show", false);
         }
