@@ -7,11 +7,6 @@ public class MusicZone : MonoBehaviour {
     SoundManager soundManager;
 	void Start () {
         soundManager = GetComponentInParent<SoundManager>();
-        print(soundManager);
-	}
-	
-	void Update () {
-		
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -34,13 +34,6 @@ public class SoundManager : MonoBehaviour {
         }
     }
 
-	void Start () {
-	}
-	
-	void Update () {
-	}
-
-
     public void StartStopMusic(AudioSource shouldStart, AudioSource shouldStop)
     {
         if (shouldStop.isPlaying)
