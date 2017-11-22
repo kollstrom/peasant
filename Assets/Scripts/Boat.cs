@@ -26,7 +26,6 @@ public class Boat : MonoBehaviour {
     // Use this for initialization
     void Start () {
         sailAway = false;
-        step = moveSpeed * Time.deltaTime;
 
         firstPoint = transform.position + new Vector3(x1, 0, 0);
         secondPoint = firstPoint + new Vector3(x2, 0, 0);
@@ -39,6 +38,7 @@ public class Boat : MonoBehaviour {
 	void Update () {
         if (sailAway == true)
         {
+            step = moveSpeed * Time.deltaTime;
             if (transform.position == firstPoint)
             {
                 currentPoint = secondPoint;

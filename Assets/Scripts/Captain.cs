@@ -5,6 +5,7 @@ using UnityEngine;
 public class Captain : MonoBehaviour {
 
     public float moveSpeed;
+    public GameObject spacebar;
 
     private Animator anim;
     private float step;
@@ -25,6 +26,7 @@ public class Captain : MonoBehaviour {
         {
             if (transform.position == firstPoint)
             {
+                spacebar.SetActive(false);
                 transform.gameObject.SetActive(false);
             }
             transform.position = Vector3.MoveTowards(transform.position, firstPoint, step);
