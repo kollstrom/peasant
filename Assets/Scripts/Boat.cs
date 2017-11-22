@@ -33,7 +33,6 @@ public class Boat : MonoBehaviour {
         thirdPoint = secondPoint + new Vector3(x3, 0, 0);
         currentPoint = firstPoint;
         soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-        print(soundManager);
     }
 	
 	// Update is called once per frame

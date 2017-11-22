@@ -16,20 +16,11 @@ public class SoundManager : MonoBehaviour {
     public AudioSource openDoorSound;
     public AudioSource heySound;
     public AudioSource celebrationSound;
-
     public float fadeTime;
 
     // Music
     public AudioSource outsideTheme;
     public AudioSource dungeonTheme;
-
-    public static Location location = Location.Outside;
-    private Location previousLocation;
-
-    public enum Location 
-    {
-        Inside, Outside
-    }
 
     public AudioSource GetCurrentAudioSource()
     {
@@ -44,24 +35,33 @@ public class SoundManager : MonoBehaviour {
     }
 
 	void Start () {
-        previousLocation = location;
-        outsideTheme.Play();
 	}
 	
 	void Update () {
-        if (previousLocation != location)
-        {
-            if (location == Location.Inside)
-            {
-                outsideTheme.Stop();
-                dungeonTheme.Play();
-            }
-            else if (location == Location.Outside)
-            {
-                dungeonTheme.Stop();
-                outsideTheme.Play();
-            }
-        }
-        previousLocation = location;
 	}
+
+
+    public void StartStopMusic(AudioSource shouldStart, AudioSource shouldStop)
+    {
+        if (shouldStop.isPlaying)
+        {
+            shouldStop.Stop();
+        }
+        if (!shouldStart.isPlaying)
+        {
+            shouldStart.Play();
+        }
+    }
+
+    public void PlayMusic(string name)
+    {
+        if (name == "InsideMusicZone")
+        {
+            StartStopMusic(dungeonTheme, outsideTheme);
+        }
+        else if (name == "OutsideMusicZone")
+        {
+            StartStopMusic(outsideTheme, dungeonTheme);
+        }
+    }
 }
