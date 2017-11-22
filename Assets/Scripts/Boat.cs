@@ -19,6 +19,8 @@ public class Boat : MonoBehaviour {
     public float x2;
     public float x3;
 
+    private float timer = 0;
+
     // Use this for initialization
     void Start () {
         sailAway = false;
@@ -28,6 +30,7 @@ public class Boat : MonoBehaviour {
         secondPoint = firstPoint + new Vector3(x2, 0, 0);
         thirdPoint = secondPoint + new Vector3(x3, 0, 0);
         currentPoint = firstPoint;
+        
     }
 	
 	// Update is called once per frame
@@ -47,7 +50,14 @@ public class Boat : MonoBehaviour {
             }
             else if(transform.position == thirdPoint)
             {
-                SceneManager.LoadSceneAsync("Credits");
+                PlayerState.catched = PlayerState.Catched.Yes;
+                timer += Time.deltaTime;
+                if(timer >= 1)
+                {
+                    SceneManager.LoadSceneAsync("Credits");
+                }
+
+                
             }
             transform.position = Vector3.MoveTowards(transform.position, currentPoint, step);
         }
