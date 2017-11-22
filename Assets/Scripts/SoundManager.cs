@@ -17,6 +17,8 @@ public class SoundManager : MonoBehaviour {
     public AudioSource heySound;
     public AudioSource celebrationSound;
 
+    public float fadeTime;
+
     // Music
     public AudioSource outsideTheme;
     public AudioSource dungeonTheme;
@@ -27,6 +29,18 @@ public class SoundManager : MonoBehaviour {
     public enum Location 
     {
         Inside, Outside
+    }
+
+    public AudioSource GetCurrentAudioSource()
+    {
+        if (outsideTheme.isPlaying)
+        {
+            return outsideTheme;
+        }
+        else 
+        {
+            return dungeonTheme;
+        }
     }
 
 	void Start () {
