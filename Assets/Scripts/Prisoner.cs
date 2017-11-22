@@ -24,6 +24,7 @@ public class Prisoner : MonoBehaviour {
     private Vector3 currentPoint;
 
     private bool fadeStarted = false;
+    private SoundManager soundManager;
 
     // Use this for initialization
     void Start () {
@@ -33,6 +34,7 @@ public class Prisoner : MonoBehaviour {
         secondPoint = firstPoint + new Vector3(-7, 0, 0);
         currentPoint = firstPoint;
         prisonerAnimator = GetComponent<Animator>();
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 	
 	// Update is called once per frame
@@ -54,6 +56,7 @@ public class Prisoner : MonoBehaviour {
             }
             else if (transform.position == secondPoint)
             {
+                soundManager.closeDoorSound.Play();
                 dialogManager.EndDialogue();
                 gameObject.SetActive(false);
                 setGhostPlayable.gameObject.SetActive(true);

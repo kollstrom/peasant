@@ -21,6 +21,8 @@ public class Boat : MonoBehaviour {
 
     private float timer = 0;
 
+    private SoundManager soundManager;
+
     // Use this for initialization
     void Start () {
         sailAway = false;
@@ -30,7 +32,7 @@ public class Boat : MonoBehaviour {
         secondPoint = firstPoint + new Vector3(x2, 0, 0);
         thirdPoint = secondPoint + new Vector3(x3, 0, 0);
         currentPoint = firstPoint;
-        
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 	
 	// Update is called once per frame
@@ -47,6 +49,10 @@ public class Boat : MonoBehaviour {
                 isShown = true;
                 FindObjectOfType<OutroTrigger>().showDialog(true);
                 currentPoint = thirdPoint;
+                print(soundManager.GetCurrentAudioSource());
+                StartCoroutine(AudioFadeOut.FadeOut(soundManager.GetCurrentAudioSource(), soundManager.fadeTime));
+
+
             }
             else if(transform.position == thirdPoint)
             {
