@@ -251,10 +251,11 @@ MonoBehaviour:
   dialogue:
     name: FirstDialogue
     sentences:
-    - HONEY!
-    - WAKE UP!
+    - "A MOTHER IS WAITING IMPATIENTLY. \n"
+    - 'HER HUSBAND AND CHILDREN HAVE BEEN AWAY FOR WEEKS. '
+    - "THEY SHOULD HAVE BEEN BACK FROM THE CAPITAL BY NOW...\r"
     afterSentences: []
-  timeBetweenDialogue: 2
+  timeBetweenDialogue: 3
 --- !u!4 &207912576
 Transform:
   m_ObjectHideFlags: 0
@@ -301,7 +302,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 47, y: 44}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &740595658
 MonoBehaviour:
@@ -424,7 +425,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397437484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 835, y: 556.5, z: 0}
+  m_LocalPosition: {x: 512, y: 384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 740595657}

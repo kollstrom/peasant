@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boat : MonoBehaviour {
 
@@ -10,20 +11,26 @@ public class Boat : MonoBehaviour {
     private float step;
     private Vector3 firstPoint;
     private Vector3 secondPoint;
+    private Vector3 thirdPoint;
     private Vector3 currentPoint;
     private bool isShown = false;
 
     public float x1;
     public float x2;
+    public float x3;
+
+    private float timer = 0;
 
     // Use this for initialization
     void Start () {
         sailAway = false;
         step = moveSpeed * Time.deltaTime;
+
         firstPoint = transform.position + new Vector3(x1, 0, 0);
         secondPoint = firstPoint + new Vector3(x2, 0, 0);
+        thirdPoint = secondPoint + new Vector3(x3, 0, 0);
         currentPoint = firstPoint;
-        print(secondPoint);
+        
     }
 	
 	// Update is called once per frame
@@ -39,6 +46,18 @@ public class Boat : MonoBehaviour {
             {
                 isShown = true;
                 FindObjectOfType<OutroTrigger>().showDialog(true);
+                currentPoint = thirdPoint;
+            }
+            else if(transform.position == thirdPoint)
+            {
+                PlayerState.catched = PlayerState.Catched.Yes;
+                timer += Time.deltaTime;
+                if(timer >= 1)
+                {
+                    SceneManager.LoadSceneAsync("Credits");
+                }
+
+                
             }
             transform.position = Vector3.MoveTowards(transform.position, currentPoint, step);
         }

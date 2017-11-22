@@ -13,6 +13,8 @@ public class DialogueHolder : MonoBehaviour {
 
     public BoxCollider2D boatTrigger;
 
+    public CameraController camCon;
+
     private bool isFinished = true;
     private bool hasStarted = false;
 
@@ -81,6 +83,7 @@ public class DialogueHolder : MonoBehaviour {
                 else if  (dialogue.name.Equals("GuardMother"))
                 {
                     sfxManager.obtainedLunchSound.Play();
+                    camCon.showHideLunch(true);
                 }
                 else if (dialogue.name.Equals("Prisoner"))
                 {
@@ -93,6 +96,7 @@ public class DialogueHolder : MonoBehaviour {
                 teleporterIntoDungeon.SetActive(true);
                 prisonTowerAnim.SetBool("isOpening", true);
                 sfxManager.openDoorSound.Play();
+                camCon.showHideLunch(false);
             }
             else if (dialogue.name.Equals("Captain") &&
                 PlayerState.savedState == PlayerState.SavedState.Saved)

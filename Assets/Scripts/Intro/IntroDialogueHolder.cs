@@ -29,6 +29,7 @@ public class IntroDialogueHolder : MonoBehaviour {
             if (dialogueManager.HasMoreSentences())
             {
                 dialogueManager.DisplayNextSentence();
+                timeLeft = timeBetweenDialogue;
             }
             else 
             {

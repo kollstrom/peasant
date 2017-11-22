@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 78b6a3e66e76a534fa6ee6ded03fc247
-timeCreated: 1510396652
+timeCreated: 1511294038
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -183,7 +183,7 @@ TextureImporter:
     21300352: roguelikeSheet_transparent_176
     21300354: roguelikeSheet_transparent_177
     21300356: roguelikeSheet_transparent_178
-    21300358: roguelikeSheet_transparent_179
+    21300358: cottage_floor
     21300360: roguelikeSheet_transparent_180
     21300362: roguelikeSheet_transparent_181
     21300364: roguelikeSheet_transparent_182
@@ -255,7 +255,7 @@ TextureImporter:
     21300496: roguelikeSheet_transparent_248
     21300498: roguelikeSheet_transparent_249
     21300500: roguelikeSheet_transparent_250
-    21300502: roguelikeSheet_transparent_251
+    21300502: cottage_table
     21300504: roguelikeSheet_transparent_252
     21300506: roguelikeSheet_transparent_253
     21300508: roguelikeSheet_transparent_254
@@ -306,7 +306,7 @@ TextureImporter:
     21300598: roguelikeSheet_transparent_299
     21300600: roguelikeSheet_transparent_300
     21300602: roguelikeSheet_transparent_301
-    21300604: roguelikeSheet_transparent_302
+    21300604: cottage_chair
     21300606: roguelikeSheet_transparent_303
     21300608: roguelikeSheet_transparent_304
     21300610: roguelikeSheet_transparent_305
@@ -355,7 +355,7 @@ TextureImporter:
     21300696: roguelikeSheet_transparent_348
     21300698: roguelikeSheet_transparent_349
     21300700: roguelikeSheet_transparent_350
-    21300702: roguelikeSheet_transparent_351
+    21300702: cottage_krakk
     21300704: roguelikeSheet_transparent_352
     21300706: roguelikeSheet_transparent_353
     21300708: roguelikeSheet_transparent_354
@@ -413,7 +413,7 @@ TextureImporter:
     21300812: roguelikeSheet_transparent_406
     21300814: roguelikeSheet_transparent_407
     21300816: roguelikeSheet_transparent_408
-    21300818: roguelikeSheet_transparent_409
+    21300818: cottage_candle
     21300820: roguelikeSheet_transparent_410
     21300822: roguelikeSheet_transparent_411
     21300824: roguelikeSheet_transparent_412
@@ -446,7 +446,7 @@ TextureImporter:
     21300878: roguelikeSheet_transparent_439
     21300880: roguelikeSheet_transparent_440
     21300882: roguelikeSheet_transparent_441
-    21300884: roguelikeSheet_transparent_442
+    21300884: cottage_fireplace
     21300886: roguelikeSheet_transparent_443
     21300888: roguelikeSheet_transparent_444
     21300890: roguelikeSheet_transparent_445
@@ -537,7 +537,7 @@ TextureImporter:
     21301060: roguelikeSheet_transparent_530
     21301062: roguelikeSheet_transparent_531
     21301064: roguelikeSheet_transparent_532
-    21301066: roguelikeSheet_transparent_533
+    21301066: cottage_chest
     21301068: roguelikeSheet_transparent_534
     21301070: roguelikeSheet_transparent_535
     21301072: roguelikeSheet_transparent_536
@@ -701,10 +701,10 @@ TextureImporter:
     21301388: roguelikeSheet_transparent_694
     21301390: roguelikeSheet_transparent_695
     21301392: roguelikeSheet_transparent_696
-    21301394: roguelikeSheet_transparent_697
+    21301394: cottage_wall_3
     21301396: roguelikeSheet_transparent_698
-    21301398: roguelikeSheet_transparent_699
-    21301400: roguelikeSheet_transparent_700
+    21301398: cottage_wall_1
+    21301400: cottage_wall_2
     21301402: roguelikeSheet_transparent_701
     21301404: roguelikeSheet_transparent_702
     21301406: roguelikeSheet_transparent_703
@@ -759,7 +759,7 @@ TextureImporter:
     21301504: roguelikeSheet_transparent_752
     21301506: roguelikeSheet_transparent_753
     21301508: roguelikeSheet_transparent_754
-    21301510: roguelikeSheet_transparent_755
+    21301510: cottage_wall_4
     21301512: roguelikeSheet_transparent_756
     21301514: roguelikeSheet_transparent_757
     21301516: roguelikeSheet_transparent_758
@@ -812,7 +812,7 @@ TextureImporter:
     21301610: roguelikeSheet_transparent_805
     21301612: roguelikeSheet_transparent_806
     21301614: roguelikeSheet_transparent_807
-    21301616: roguelikeSheet_transparent_808
+    21301616: cottage_wall_5
     21301618: roguelikeSheet_transparent_809
     21301620: roguelikeSheet_transparent_810
     21301622: roguelikeSheet_transparent_811
@@ -869,12 +869,12 @@ TextureImporter:
     21301724: roguelikeSheet_transparent_862
     21301726: roguelikeSheet_transparent_863
     21301728: roguelikeSheet_transparent_864
-    21301730: roguelikeSheet_transparent_865
+    21301730: cottage_wall_6
     21301732: roguelikeSheet_transparent_866
     21301734: roguelikeSheet_transparent_867
     21301736: roguelikeSheet_transparent_868
     21301738: roguelikeSheet_transparent_869
-    21301740: roguelikeSheet_transparent_870
+    21301740: cottage_wall_7
     21301742: roguelikeSheet_transparent_871
     21301744: roguelikeSheet_transparent_872
     21301746: roguelikeSheet_transparent_873
@@ -888,7 +888,7 @@ TextureImporter:
     21301762: roguelikeSheet_transparent_881
     21301764: roguelikeSheet_transparent_882
     21301766: roguelikeSheet_transparent_883
-    21301768: roguelikeSheet_transparent_884
+    21301768: boat
     21301770: roguelikeSheet_transparent_885
     21301772: roguelikeSheet_transparent_886
     21301774: roguelikeSheet_transparent_887
@@ -6170,7 +6170,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_179
+      name: cottage_floor
       rect:
         serializedVersion: 2
         x: 136
@@ -7884,7 +7884,7 @@ TextureImporter:
         - {x: 5, y: 7}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_251
+      name: cottage_table
       rect:
         serializedVersion: 2
         x: 391
@@ -9132,7 +9132,7 @@ TextureImporter:
         - {x: -4, y: 6}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_302
+      name: cottage_chair
       rect:
         serializedVersion: 2
         x: 357
@@ -10296,7 +10296,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_351
+      name: cottage_krakk
       rect:
         serializedVersion: 2
         x: 306
@@ -11710,7 +11710,7 @@ TextureImporter:
         - {x: 5, y: 5}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_409
+      name: cottage_candle
       rect:
         serializedVersion: 2
         x: 340
@@ -12546,7 +12546,7 @@ TextureImporter:
         - {x: 7, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_442
+      name: cottage_fireplace
       rect:
         serializedVersion: 2
         x: 918
@@ -14918,7 +14918,7 @@ TextureImporter:
         - {x: 3, y: 2}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_533
+      name: cottage_chest
       rect:
         serializedVersion: 2
         x: 629
@@ -18960,7 +18960,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_697
+      name: cottage_wall_3
       rect:
         serializedVersion: 2
         x: 595
@@ -19004,7 +19004,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_699
+      name: cottage_wall_1
       rect:
         serializedVersion: 2
         x: 629
@@ -19026,7 +19026,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_700
+      name: cottage_wall_2
       rect:
         serializedVersion: 2
         x: 646
@@ -20268,7 +20268,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_755
+      name: cottage_wall_4
       rect:
         serializedVersion: 2
         x: 612
@@ -21468,11 +21468,11 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_808
+      name: cottage_wall_5
       rect:
         serializedVersion: 2
         x: 578
-        y: 272
+        y: 273
         width: 16
         height: 16
       alignment: 0
@@ -22750,7 +22750,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_865
+      name: cottage_wall_6
       rect:
         serializedVersion: 2
         x: 578
@@ -22860,7 +22860,7 @@ TextureImporter:
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_870
+      name: cottage_wall_7
       rect:
         serializedVersion: 2
         x: 663
@@ -23236,7 +23236,7 @@ TextureImporter:
         - {x: 7, y: 4}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_884
+      name: boat
       rect:
         serializedVersion: 2
         x: 901
