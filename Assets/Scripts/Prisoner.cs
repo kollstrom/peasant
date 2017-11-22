@@ -29,7 +29,6 @@ public class Prisoner : MonoBehaviour {
     // Use this for initialization
     void Start () {
         escape = false;
-        step = moveSpeed * Time.deltaTime;
         firstPoint = transform.position + new Vector3(0, -3, 0);
         secondPoint = firstPoint + new Vector3(-7, 0, 0);
         currentPoint = firstPoint;
@@ -41,9 +40,9 @@ public class Prisoner : MonoBehaviour {
 	void Update () {
         if (escape == true)
         {
+            step = moveSpeed * Time.deltaTime;
             StartWalkingDownwards();
             FindObjectOfType<PlayerController>().disable();
-            //print(transform.position);
             if (transform.position.x <= secondPoint.x + 3.5f && !fadeStarted)
             {
                 PlayerState.catched = PlayerState.Catched.Yes;

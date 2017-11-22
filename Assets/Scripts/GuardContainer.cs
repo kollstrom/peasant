@@ -3,6 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GuardContainer : MonoBehaviour {
+
+    private float timer = 0;
+    private bool runTimer = true;
+
+    private void Update()
+    {
+        if (runTimer)
+        {
+            timer += Time.deltaTime;
+            if(timer >= 2)
+            {
+                resetChildren();
+                runTimer = false;
+            }
+        }
+    }
+
     public void resetChildren()
     {
         foreach (Transform child in transform)
