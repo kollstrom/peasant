@@ -15,7 +15,6 @@ public class Captain : MonoBehaviour {
     void Start()
     {
         walkOnShip = false;
-        step = moveSpeed * Time.deltaTime;
         firstPoint = transform.position + new Vector3(1.7f, 0, 0);
         anim = GetComponent<Animator>();
     }
@@ -24,6 +23,7 @@ public class Captain : MonoBehaviour {
 	void Update () {
         if (walkOnShip == true)
         {
+            step = moveSpeed * Time.deltaTime;
             if (transform.position == firstPoint)
             {
                 spacebar.SetActive(false);
